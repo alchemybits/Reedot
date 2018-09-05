@@ -4,6 +4,7 @@ import Login from './Login/Login';
 import Home from './Home/Home';
 import Loading from './Loading/Loading';
 import Landing from './Landing/Landing';
+import MenuBar from "./menuBar/menuBar";
 
 import { connect } from 'react-redux';
 
@@ -76,12 +77,13 @@ class App extends React.Component {
     return this.state.loading === true ? <Loading /> : (
       
       <Router>
+        
         <Switch>
+            
           
-          
-            <PrivateRoute authed={this.state.authed} path='/App' component={Home} />
+            <PublicRoute authed={this.state.authed} path='/App' component={Home} />
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
-            <Route path = "/" component = {Landing}/>
+            <Route path = "/" component = {Home}/>
           
         </Switch>
       </Router>
