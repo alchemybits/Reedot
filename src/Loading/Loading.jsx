@@ -4,7 +4,9 @@ import React from "react";
 function template() {
   return (
     <div className="loading">
-      <h1>Loading</h1>
+      <div id="preloader">
+      	<div class="loader" id="loader-1"></div>
+    	</div>
     </div>
   );
 };
