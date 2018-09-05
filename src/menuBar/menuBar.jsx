@@ -76,16 +76,18 @@ function template() {
             </ul>
             <ul class="sign-in">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i> My Account</a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i> My Account</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="account-profile-setting"><i class="lni-home"></i> Account Home</a>
                   <a class="dropdown-item" href="account-myads"><i class="lni-wallet"></i> My Ads</a>
                   <a class="dropdown-item" href="account-favourite-ads"><i class="lni-heart"></i> Favourite ads</a>
                   <a class="dropdown-item" href="account-archived-ads"><i class="lni-folder"></i> Archived</a>
-                  <a class="dropdown-item" href="login"><i class="lni-lock"></i> Log In</a>
-                  <a class="dropdown-item" href="signup"><i class="lni-user"></i> Signup</a>
+                  <li class="dropdown-item"><i class="lni-lock"></i><Link to="login"> Log In</Link></li>
+                  <li class="dropdown-item"><i class="lni-user"></i> <Link to="signup"> Signup</Link></li>
+                  
                   <a class="dropdown-item" href="forgot-password"><i class="lni-reload"></i> Forgot Password</a>
-                  <a class="dropdown-item" href="account-close"><i class="lni-close"></i>Account close</a>
+                   {/* // href="account-close" */}
+                  <li class="dropdown-item" onClick={this.signOut}><i class="lni-close" ></i>Log out</li>
                 </div>
               </li>
             </ul>

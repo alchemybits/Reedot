@@ -1,10 +1,10 @@
 import React    from "react";
-import template from "./Login.jsx";
+import template from "./Signup.jsx";
 import swal from "sweetalert2";
 
 import * as firebase from "firebase";
 
-class Login extends React.Component {
+class Signup extends React.Component {
 
 
 
@@ -39,7 +39,7 @@ constructor(props) {
 
     e.preventDefault();
     const toast = this.toast;
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((Luser) => {
+    firebase.auth().createUserWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password).then((Luser) => {
         // [END createwithemail]
         // callSomeFunction(); Optional
         var user = firebase.auth().currentUser;
@@ -97,7 +97,7 @@ constructor(props) {
     e.preventDefault();
     const toast = this.toast;
 
-    firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password)
+    firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password.toLowerCase())
     .then(function(user){
       toast({
         type: 'success',
@@ -134,6 +134,4 @@ constructor(props) {
   }
 }
 
-
-
-export default Login;
+export default Signup;

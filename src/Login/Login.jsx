@@ -22,7 +22,7 @@ function template() {
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="lni-user"></i>
-                    <input type="text" class="form-control"id="email" required="required" value={this.state.email} name="email" onChange={this.handleChange} />
+                    <input type="text" class="form-control" id="email" required="required" value={this.state.email} name="email" onChange={this.handleChange} />
                   </div>
                 </div> 
                 <div class="form-group">
@@ -49,37 +49,7 @@ function template() {
     </section>
   
   </div>
-  <div className="card alt">
-    <div className="toggle" onClick={((e) => this.toggleClass(e))}></div>
-    <h1 className="title">Registrate
-      <div className="close" onClick={((e) => this.toggleClass(e))}></div>
-    </h1>
-    <form onSubmit={this.register}>
-      <div className="input-container">
-        <input type="text" id="rusername" required="required" value={this.state.name} name="name" onChange={this.handleChange}/>
-        <label htmlFor="rusername">Nombre</label>
-        <div className="bar"></div>
-      </div>
-      <div className="input-container">
-        <input type="email" id="remail" required="required" value={this.state.email} name="email" onChange={this.handleChange}/>
-        <label htmlFor="remail">Correo</label>
-        <div className="bar"></div>
-      </div>
-      <div className="input-container">
-        <input type="password" id="rpassword" required="required" value={this.state.password} name="password" onChange={this.handleChange}/>
-        <label htmlFor="password">Contraseña</label>
-        <div className="bar"></div>
-      </div>
-      <div className="input-container">
-        <input type="password" id="rrpassword" required="required" value={this.state.rpassword} name="rpassword" onChange={this.handleChange}/>
-        <label htmlFor="password">Confirmar Contraseña</label>
-        <div className="bar"></div>
-      </div>
-      <div className="button-container">
-        <button><span>Next</span></button>
-      </div>
-    </form>
-  </div>
+  
 
 </div>
 

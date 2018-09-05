@@ -1,6 +1,7 @@
 import React from 'react';
 import * as firebase from 'firebase';
 import Login from './Login/Login';
+import Signup from './Signup/Signup';
 import Home from './Home/Home';
 import Loading from './Loading/Loading';
 import Landing from './Landing/Landing';
@@ -148,9 +149,10 @@ class App extends React.Component {
         
         <Switch>
             
-          
+            
             <PublicRoute authed={this.state.authed} path='/App' component={Home} />
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
+            <PublicRoute authed={this.state.authed} path='/signup' component={Signup} />
             <PublicRoute authed={this.state.authed} path='/Category' component={Category} />
             <Route path = "/" component = {Home}/>
           

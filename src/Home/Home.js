@@ -25,27 +25,6 @@ class Home extends React.Component {
 	constructor(){
 		super();
 
-		// this.state = {
-		// 	torneos :
-		// 	{ '12312312':
-		// 		{
-		// 			equipo1: 'Madrid',
-		// 			equipo2:'Barca'
-		// 		},
-		// 		'435345345':
-		// 			{
-		// 				equipo1: 'Olimpia',
-		// 				equipo2:'Motagua'
-		// 			},
-
-		// 		'3838394':
-		// 		{
-		// 			equipo1: 'PSG',
-		// 			equipo2:'Milan'
-		// 		}
-		// 	}
-		// }
-
 		this.increment = this.increment.bind(this);
 	}
 
@@ -57,7 +36,7 @@ class Home extends React.Component {
 	    e.preventDefault();
 	    firebase.auth().signOut().then(function() {
 	      // Sign-out successful.
-	      swal({title:'Que tengas un excelente dia!',toast: true,position:"top-end",showConfirmButton: false,timer: 2000,});
+	      swal({title:'Have a nice day!',toast: true,position:"bottom-end",showConfirmButton: false,timer: 2000,});
 	    }).catch(function(error) {
 	      // An error happened.
 	      swal("Yikes somethng HAPPEND","error");

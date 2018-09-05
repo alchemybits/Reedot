@@ -1,12 +1,12 @@
  import * as firebase from 'firebase';
 
-  var config = {
-    apiKey: "AIzaSyDkH0MYw-WmXbZ9vUFNjHh1o2aGrYsxNkQ",
-    authDomain: "fileit-21.firebaseapp.com",
-    databaseURL: "https://fileit-21.firebaseio.com",
-    projectId: "fileit-21",
-    storageBucket: "",
-    messagingSenderId: "406703503231"
+var config = {
+    apiKey: "AIzaSyDZY05NIXF9QOrIVwcjILZWmJwXSPYPxH4",
+    authDomain: "reedot-ae90a.firebaseapp.com",
+    databaseURL: "https://reedot-ae90a.firebaseio.com",
+    projectId: "reedot-ae90a",
+    storageBucket: "reedot-ae90a.appspot.com",
+    messagingSenderId: "893942789831"
   };
   firebase.initializeApp(config);
 
