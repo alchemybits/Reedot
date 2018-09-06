@@ -67,7 +67,15 @@ class Postadd extends React.Component {
     price.value = "";
     description.value = "";
     
-    
+
+		const vfirstname = this.firstname.value;
+		const vlastname = this.lastname.value;
+		const vphone = this.phone.value;
+		const vaddressa = this.addressa.value;
+		const vaddressb = this.addressb.value;
+		const vcountry = this.country.value;
+		const vstate = this.statep.value;
+		const vcity = this.city.value;
 
 
 
@@ -92,7 +100,7 @@ class Postadd extends React.Component {
         alert("oops, something happend!",err);
       },
       function complete(pic){
-        productos.push({
+        const test = productos.push({
           nombre: NAME,
           precio: PRICE,
           desc: DESC,
@@ -100,6 +108,9 @@ class Postadd extends React.Component {
           categoria: CAT,
           subcategoria: SUBCAT
         });
+
+
+        console.log("THIS IS THE TEST!!!! ===> <=====",test);
         const toast = swal.mixin({
           toast: true,
           position: 'center',

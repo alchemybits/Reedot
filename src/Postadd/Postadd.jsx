@@ -83,13 +83,14 @@ function template() {
           </div>
 
           <div class="col-sm-12 col-md-8 col-lg-9">
-            <div class="row page-content">
+            <div >
+            <form class="row page-content" action="" method="post" onSubmit={this.newProduct}>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
                 <div class="inner-box">
                   <div class="dashboard-box">
                     <h2 class="dashbord-title">Ad Detail</h2>
                   </div>
-                  <form action="" method="post" onSubmit={this.newProduct}>
+                  
                   <div class="dashboard-wrapper">
                     <div class="form-group mb-3">
                       <label class="control-label">Project Title</label>
@@ -127,15 +128,14 @@ function template() {
                       
                     </div>
                     <label class="tg-fileuploadlabel" for="tg-photogallery">
-                      <span>Drop files anywhere to upload</span>
-                      <span>Or</span>
-                      <span class="btn btn-common">Select Files</span>
-                      <span>Maximum upload file size: 500 KB</span>
-                      <input className="tg-fileinput" type="file" id="pic" onChange={(event) => {this.change(event); }} /> 
+                      {/*  <span>Drop files anywhere to upload</span>
+                      // <span>Or</span>
+                      // <span class="btn btn-common">Select Files</span>
+                      // <span>Maximum upload file size: 500 KB</span> */}
+                      <input className="tg-fileinput btn btn-common" type="file" id="pic" onChange={(event) => {this.change(event); }} /> 
                     </label>
                   </div>
-                  <button class="btn btn-common" type="submit">sPost Ad</button>
-                  </form>
+                  
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
@@ -145,7 +145,7 @@ function template() {
                       <h2 class="dashbord-title">Contact Detail</h2>
                     </div>
                     <div class="dashboard-wrapper">
-                      <div class="form-group mb-3">
+                      {/*<div class="form-group mb-3">
                         <strong>I’m a:</strong>
                         <div class="tg-selectgroup">
                           <span class="tg-radio">
@@ -157,31 +157,43 @@ function template() {
                             <label for="tg-someoneelse">Someone Else</label>
                           </span>
                         </div>
-                      </div>
+                      </div>*/}
                       <div class="form-group mb-3">
                         <label class="control-label">First Name*</label>
-                        <input class="form-control input-md" name="name" type="text" />
+                        <input class="form-control input-md" name="name" type="text" ref={el => this.firstname = el}/>
                       </div>
                       <div class="form-group mb-3">
                         <label class="control-label">Last Name*</label>
-                        <input class="form-control input-md" name="name" type="text" />
+                        <input class="form-control input-md" name="name" type="text" ref={el => this.lastname = el}/>
                       </div>
                       <div class="form-group mb-3">
                         <label class="control-label">Phone*</label>
-                        <input class="form-control input-md" name="phone" type="text" />
+                        <input class="form-control input-md" name="phone" type="text" ref={el => this.phone = el}/>
                       </div>
                       <div class="form-group mb-3">
                         <label class="control-label">Enter Address</label>
-                        <input class="form-control input-md" name="address" type="text" />
+                        <input class="form-control input-md" name="addressa" type="text" ref={el => this.addressa = el}/>
                       </div>
                       <div class="form-group mb-3">
                         <label class="control-label">Enter Address</label>
-                        <input class="form-control input-md" name="address" type="text" />
+                        <input class="form-control input-md" name="addressb" type="text" ref={el => this.addressb = el}/>
                       </div>
-                      <div class="form-group mb-3 tg-inputwithicon">
+                      <div class="form-group mb-3">
+                        <label class="control-label">Country</label>
+                        <input class="form-control input-md" name="country" type="text" ref={el => this.country = el}/>
+                      </div>
+                      <div class="form-group mb-3">
+                        <label class="control-label">State</label>
+                        <input class="form-control input-md" name="state" type="text" ref={el => this.statep = el}/>
+                      </div>
+                      <div class="form-group mb-3">
+                        <label class="control-label">City</label>
+                        <input class="form-control input-md" name="city" type="text" ref={el => this.city = el}/>
+                      </div>
+                      {/*<div class="form-group mb-3 tg-inputwithicon">
                         <label class="control-label">Country</label>
                         <div class="tg-select form-control">
-                          <select>
+                          <select ref={el => this.country = el} >
                             <option value="none">Select Country</option>
                             <option value="none">Country 1</option>
                             <option value="none">Country 2</option>
@@ -211,12 +223,12 @@ function template() {
                             <option value="none">Select City</option>
                           </select>
                         </div>
-                      </div>
+                      </div>*/}
                       <div class="tg-checkbox">
                         <input id="tg-agreetermsandrules" type="checkbox" name="agreetermsandrules" value="on" />
                         <label for="tg-agreetermsandrules">I agree to all <a href="javascript:void(0);">Terms of Use &amp; Posting Rules</a></label>
                       </div>
-                      <button class="btn btn-common" type="button">Post Ad</button>
+                      <button class="btn btn-common" type="submit">Post Ad</button>
                     </div>
                     <div className="flex progressContainer">
                       <p id="size" className="f3">0</p>
@@ -228,7 +240,10 @@ function template() {
                   </div>
                 </div>
               </div>
+              </form>
             </div>
+            
+            
           </div>
         </div>  
       </div>      
