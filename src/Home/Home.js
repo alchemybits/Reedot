@@ -36,7 +36,7 @@ class Home extends React.Component {
 	    e.preventDefault();
 	    firebase.auth().signOut().then(function() {
 	      // Sign-out successful.
-	      swal({title:'Have a nice day!',toast: true,position:"bottom-end",showConfirmButton: false,timer: 2000,});
+	      swal({title:'Have a nice day!',toast: true,position:"center",showConfirmButton: false,timer: 2000,});
 	    }).catch(function(error) {
 	      // An error happened.
 	      swal("Yikes somethng HAPPEND","error");

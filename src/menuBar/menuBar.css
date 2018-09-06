@@ -2,6 +2,10 @@
   display:flex;
 }
 
+.navbar-brand{
+  color:#00cc67 !important;
+}
+
 .pointer{
   cursor: pointer;
 }

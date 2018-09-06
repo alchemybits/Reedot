@@ -3,7 +3,32 @@ import React from "react";
 import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 import Logo from "../logo/logo";
 
+function guest(func){	
+	// const add = (path == "/Collection" || path == "/collection" )?"":<span><i className="material-icons" ><Link to="/Collection">search</Link></i></span>;
+	return (
+		<div className="">
+    <li class="dropdown-item"><i class="lni-lock"></i><Link to="login"> Log In</Link></li>
+    <li class="dropdown-item"><i class="lni-user"></i><Link to="signup"> Signup</Link></li>
+		
+			
+		</div>
+	)
+}
+
+function logout(func){
+	// const add = (path == "/Collection" || path == "/collection" )?"":<span><i className="material-icons"><Link to="/Collection">search</Link></i></span>;
+	return (
+		<div className="">
+		<li class="dropdown-item" onClick={func}><i class="lni-close" ></i>Log out</li>
+		</div>
+	)
+}
+
+
+
 function template() {
+
+  
   return (
 		
     <div>
@@ -18,7 +43,7 @@ function template() {
               <span class="lni-menu"></span>
               <span class="lni-menu"></span>
             </button>
-            <a href="index" class="navbar-brand"><img src="assets/img/logo.png" alt="" /></a>
+            <Link to="Home" class="navbar-brand"><h1>Reedot</h1></Link>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto">
@@ -37,7 +62,7 @@ function template() {
                   Listings
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="adlistinggrid">Ad Grid</a>
+                  <a class="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
                   <a class="dropdown-item" href="adlistinglist">Ad Listing</a>
                   <a class="dropdown-item" href="ads-details">Listing Detail</a>
                 </div>
@@ -50,7 +75,7 @@ function template() {
                   <a class="dropdown-item" href="about">About Us</a>
                   <a class="dropdown-item" href="services">Services</a>
                   <a class="dropdown-item" href="ads-details">Ads Details</a>
-                  <a class="dropdown-item" href="post-ads">Ads Post</a>
+                  <Link class="dropdown-item" to="post-ads">Ads Post</Link>
                   <a class="dropdown-item" href="pricing">Packages</a>
                   <a class="dropdown-item" href="testimonial">Testimonial</a>
                   <a class="dropdown-item" href="faq">FAQ</a>
@@ -82,18 +107,18 @@ function template() {
                   <a class="dropdown-item" href="account-myads"><i class="lni-wallet"></i> My Ads</a>
                   <a class="dropdown-item" href="account-favourite-ads"><i class="lni-heart"></i> Favourite ads</a>
                   <a class="dropdown-item" href="account-archived-ads"><i class="lni-folder"></i> Archived</a>
-                  <li class="dropdown-item"><i class="lni-lock"></i><Link to="login"> Log In</Link></li>
-                  <li class="dropdown-item"><i class="lni-user"></i> <Link to="signup"> Signup</Link></li>
                   
-                  <a class="dropdown-item" href="forgot-password"><i class="lni-reload"></i> Forgot Password</a>
-                   {/* // href="account-close" */}
-                  <li class="dropdown-item" onClick={this.signOut}><i class="lni-close" ></i>Log out</li>
+                  
+                  
+                  {/* <a class="dropdown-item" href="forgot-password"><i class="lni-reload"></i> Forgot Password</a> */}
+                  {this.props.islogged ? logout(this.signOut) : guest()}
+                  
                 </div>
               </li>
             </ul>
-            <a class="tg-btn" href="/post-ads.html">
+            <Link class="tg-btn" to="post-ads">
               <i class="lni-pencil-alt"></i> Post An Ad
-            </a>
+            </Link>
           </div>
         </div>
 

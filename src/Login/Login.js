@@ -21,7 +21,7 @@ constructor(props) {
 
      this.toast = swal.mixin({
       toast: true,
-      position: 'bottom-end',
+      position: 'center',
       showConfirmButton: false,
       timer: 3000
     });
@@ -101,7 +101,7 @@ constructor(props) {
     .then(function(user){
       toast({
         type: 'success',
-        title: 'Bienvenido '+ user.user.displayName
+        title: 'Welcome '+ user.user.displayName
       })
     })
     .catch(function(error) {
