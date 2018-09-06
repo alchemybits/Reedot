@@ -11,4 +11,5 @@ var config = {
   firebase.initializeApp(config);
 
   export const database = firebase.database().ref('/');
+  export const productos = firebase.database().ref('Productos/');
 

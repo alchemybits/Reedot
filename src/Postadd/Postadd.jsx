@@ -16,8 +16,8 @@ function template() {
                     <a href="#"><img src="assets/img/author/img1.jpg" alt="" /></a>
                   </figure>
                   <div class="usercontent">
-                    <h3>User</h3>
-                    <h4>Administrator</h4>
+                    <h3>{this.props.user}</h3>
+                   {/* <h4>Administrator</h4>*/}
                   </div>
                 </div>
                 <nav class="navdashboard">
@@ -89,29 +89,30 @@ function template() {
                   <div class="dashboard-box">
                     <h2 class="dashbord-title">Ad Detail</h2>
                   </div>
+                  <form action="" method="post" onSubmit={this.newProduct}>
                   <div class="dashboard-wrapper">
                     <div class="form-group mb-3">
                       <label class="control-label">Project Title</label>
-                      <input class="form-control input-md" name="Title" placeholder="Title" type="text" />
+                      <input class="form-control input-md" type="text" id="name" name="user_name" placeholder="Title" ref={el => this.nombre = el} />
                     </div>
                     <div class="form-group mb-3 tg-inputwithicon">
                       <label class="control-label">Categories</label>
                       <div class="tg-select form-control">
-                        <select>
+                        <select name="sele" id="sele" ref={el => this.cat = el}>
                           <option value="none">Select Categories</option>
-                          <option value="none">Mobiles</option>
-                          <option value="none">Electronics</option>
-                          <option value="none">Training</option>
-                          <option value="none">Real Estate</option>
-                          <option value="none">Services</option>
-                          <option value="none">Training</option>
-                          <option value="none">Vehicles</option>
+                          <option value="Mobiles">Mobiles</option>
+                          <option value="Electronics">Electronics</option>
+                          <option value="Training">Training</option>
+                          <option value="RealEstate">Real Estate</option>
+                          <option value="Services">Services</option>
+                          <option value="Training">Training</option>
+                          <option value="Vehicles">Vehicles</option>
                         </select>
                       </div>
                     </div>
                     <div class="form-group mb-3">
                       <label class="control-label">Price Title</label>
-                      <input class="form-control input-md" name="price" placeholder="Ad your Price" type="text" />
+                      <input class="form-control input-md" placeholder="Ad your Price" type="text" id="price" className="admin" name="user_name" ref={el => this.precio = el} />
                       <div class="tg-checkbox">
                         <input id="tg-priceoncall" type="checkbox" name="priceoncall" value="on" />
                         <label for="tg-priceoncall">Price On Call</label>
@@ -121,7 +122,7 @@ function template() {
 
                     <div class="form-group mb-3">                      
                       <h4 for="tg-maintext">Description</h4>
-                      <textarea name="mainText" id="tg-maintext" rows="10" style={{width:'100%'}}></textarea>
+                      <textarea name="mainText" rows="10" style={{width:'100%'}} id="desc" name="user_bio" placeholder="Write a brief description..." ref={el => this.description = el} ></textarea>
                     </div>  
                       
                     </div>
@@ -130,9 +131,11 @@ function template() {
                       <span>Or</span>
                       <span class="btn btn-common">Select Files</span>
                       <span>Maximum upload file size: 500 KB</span>
-                      <input id="tg-photogallery" class="tg-fileinput" type="file" name="file" />
+                      <input className="tg-fileinput" type="file" id="pic" onChange={(event) => {this.change(event); }} /> 
                     </label>
                   </div>
+                  <button class="btn btn-common" type="submit">sPost Ad</button>
+                  </form>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
@@ -215,6 +218,13 @@ function template() {
                       </div>
                       <button class="btn btn-common" type="button">Post Ad</button>
                     </div>
+                    <div className="flex progressContainer">
+                      <p id="size" className="f3">0</p>
+                      <div className="f10">
+                        <progress id="progressBar" value="0" max="100"></progress>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>

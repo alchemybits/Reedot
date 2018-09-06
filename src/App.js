@@ -20,12 +20,13 @@ import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-r
   // Initialize Firebase
 
 
-function PrivateRoute ({component: Component, authed, ...rest}) {
+function PrivateRoute ({component: Component, authed,user, ...rest}) {
+  console.log("...........",user);
   return (
     <Route
       {...rest}
       render={(props) => authed === true
-        ? <Component {...props} />
+        ? <Component {...props} user={user} />
         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
     />
   )
@@ -38,12 +39,13 @@ function mapStateToProps(state) {
 }
 
 function PublicRoute ({component: Component, authed, ...rest}) {
+
   return (
     <Route
-      {...rest}
+        {...rest}
       render={(props) => authed === false
         ? <Component {...props} />
-        : <Redirect to='/App' />}
+        : <Redirect to='/Home' />}
     />
   )
 }
@@ -58,15 +60,19 @@ class App extends React.Component {
 
   componentDidMount(){
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      
       if (user) {
         this.setState({
           authed: true,
           loading: false,
+          user: user.displayName,
+          
         })
       } else {
         this.setState({
           authed: false,
-          loading: false
+          loading: false,
+          user: '',
         })
       }
     })
@@ -98,11 +104,12 @@ class App extends React.Component {
         <Switch>
             
             
+            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
             <PublicRoute authed={this.state.authed} path='/App' component={Home} />
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
             <PublicRoute authed={this.state.authed} path='/signup' component={Signup} />
             <PublicRoute authed={this.state.authed} path='/Category' component={Category} />
-            <PublicRoute authed={this.state.authed} path='/Post-ads' component={Postadd} />
+            
             <Route path = "/" component = {Home}/>
           
         </Switch>
