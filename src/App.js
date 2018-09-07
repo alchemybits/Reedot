@@ -9,6 +9,7 @@ import Category from './Category/Category';
 import MenuBar from "./menuBar/menuBar";
 import Herosection from "./Herosection/Herosection";
 import Postadd from "./Postadd/Postadd";
+import Request from "./Request/Request";
 
 import { connect } from 'react-redux';
 
@@ -104,7 +105,8 @@ class App extends React.Component {
         <Switch>
             
             
-            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />            
+            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
+            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/Requests' component={Request} />            
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
             <PublicRoute authed={this.state.authed} path='/signup' component={Signup} />
             <PublicRoute authed={this.state.authed} path='/Category' component={Category} />

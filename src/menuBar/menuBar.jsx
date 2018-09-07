@@ -58,6 +58,28 @@ function template() {
                 
               </li>
               <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Request
+                </a>
+                <div className="dropdown-menu">
+                  <Link className="dropdown-item" to="Requests">See All</Link>
+                  <Link className="dropdown-item" to="post-request">Post a Request</Link>                  
+                </div>
+                  
+                
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ads and Products
+                </a>
+                <div className="dropdown-menu">
+                  <Link className="dropdown-item" to="Products">See All</Link>
+                  <Link className="dropdown-item" to="post-ads">Post a Add or Product</Link>                  
+                </div>
+                  
+                
+              </li>
+              {/*<li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Listings
                 </a>
@@ -97,7 +119,7 @@ function template() {
                 <a className="nav-link" href="contact">
                   Contact
                 </a>
-              </li>
+              </li> */}
             </ul>
             <ul className="sign-in">
               <li className="nav-item dropdown">
