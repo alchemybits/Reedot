@@ -22,7 +22,7 @@ function template() {
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="lni-user"></i>
-                    <input type="text" class="form-control" id="email" required="required" value={this.state.email} name="email" onChange={this.handleChange} />
+                    <input type="text" class="form-control" id="email" required="required" value={this.state.email} name="email" onChange={(event) => {this.handleChange(event); event.target.value.toLowerCase();}}  />
                   </div>
                 </div> 
                 <div class="form-group">

@@ -113,7 +113,8 @@ function template() {
                     </div>
                     <div class="form-group mb-3">
                       <label class="control-label">Price Title</label>
-                      <input class="form-control input-md" placeholder="Ad your Price" type="text" id="price" className="admin" name="user_name" ref={el => this.precio = el} />
+                      <input class="form-control input-md" placeholder="Add your Price" type="text" id="price" className="admin" name="user_name" ref={el => this.precio = el} />
+                      <label class="control-label">/Per hour</label>
                       <div class="tg-checkbox">
                         <input id="tg-priceoncall" type="checkbox" name="priceoncall" value="on" />
                         <label for="tg-priceoncall">Price On Call</label>

@@ -31,10 +31,72 @@ constructor(props) {
     this.toggleClass = this.toggleClass.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.register = this.register.bind(this);
+    this.checkPwd = this.checkPwd.bind(this);
+    this.checkInputs = this.checkInputs.bind(this);
 
   }
 
+  checkPwd(e){
+    const toast = this.toast;
+    let ans = false;
+    
+      const pwd = document.querySelector("#rpassword");
+      const rpwd = document.querySelector("#rrpassword");
+      
 
+      if(pwd.value === rpwd.value){                
+        
+        ans=true;
+      }else{
+        ans=false;
+        
+        if(pwd.value != "" && rpwd.value != "")
+        toast({
+              type: 'error',
+              title: 'Passwords must match!',
+              position:'bottom-end',
+              timer:2000
+            })
+      }
+      
+  return ans;
+
+  }
+
+  checkInputs(e){
+    e.preventDefault();
+    const toast = this.toast;
+    const user = document.querySelector("#rusername");
+    const email = document.querySelector("#remail");
+    const pwd = document.querySelector("#rpassword");
+    const rpwd = document.querySelector("#rrpassword");
+    
+    let ans;
+
+    console.log({user,email});
+
+    if(user.value != "" && email.value != ""){                        
+        ans=true;
+      }else{
+        ans=false;        
+        if(pwd.value != "" && rpwd.value != "")
+        toast({
+              type: 'error',
+              title: 'all inputs must be filled!',
+              position:'bottom-end',
+              timer:2000
+            })
+      }
+
+      ans = this.checkPwd();
+
+      if(ans)
+        this.register(e);
+
+
+
+
+  }
 
   register(e){
 
@@ -47,14 +109,12 @@ constructor(props) {
         
         // [END createwithemail]
         // callSomeFunction(); Optional
-        var user = firebase.auth().currentUser;
-        console.log('UIJEIEJFIW',user);
+        var user = firebase.auth().currentUser;        
         user.updateProfile({
             displayName: this.state.name
-        }).then(function() {
-          
-           console.log("YES");
-            database.child("usuarios").child(user.uid).update({
+        }).then(function() {          
+           
+            database.child("users").child(user.uid).update({
               user: user.displayName
   
             })

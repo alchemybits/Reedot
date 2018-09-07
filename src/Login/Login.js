@@ -125,7 +125,8 @@ constructor(props) {
   }
 
   handleChange(event) {
-    
+    const email = document.querySelector("#email");
+    email.value = email.value.toLowerCase();
     this.setState({[event.target.name]: event.target.value});
     //console.log("event",event.target.name);
   }

@@ -12,7 +12,7 @@ function template() {
 		              <h3>
 		                Register
 		              </h3>
-		              <form class="login-form" onSubmit={this.register}>
+		              <form class="login-form" onSubmit={this.checkInputs}>
 		                <div class="form-group">
 		                  <div class="input-icon">
 		                    <i class="lni-user"></i>
@@ -28,13 +28,13 @@ function template() {
 		                <div class="form-group">
 		                  <div class="input-icon">
 		                    <i class="lni-lock"></i>
-		                    <input type="password" class="form-control" id="rpassword" required="required" value={this.state.password} name="password" onChange={this.handleChange}/>
+		                    <input type="password" class="form-control" id="rpassword" required="required" value={this.state.password} name="password" onChange={(event) => {this.handleChange(event); }}/>
 		                  </div>
 		                </div>  
 		                <div class="form-group">
 		                  <div class="input-icon">
 		                    <i class="lni-lock"></i>
-		                    <input type="password" class="form-control" id="rrpassword" required="required" value={this.state.rpassword} name="rpassword" onChange={this.handleChange}/>
+		                    <input type="password" class="form-control" id="rrpassword" required="required" value={this.state.rpassword} name="rpassword" onChange={(event) => {this.handleChange(event); }}/>
 		                  </div>
 		                </div>  
 		                <div class="form-group mb-3">

@@ -104,8 +104,7 @@ class App extends React.Component {
         <Switch>
             
             
-            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
-            <PublicRoute authed={this.state.authed} path='/App' component={Home} />
+            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />            
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
             <PublicRoute authed={this.state.authed} path='/signup' component={Signup} />
             <PublicRoute authed={this.state.authed} path='/Category' component={Category} />
