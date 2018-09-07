@@ -12,4 +12,5 @@ var config = {
 
   export const database = firebase.database().ref('/');
   export const productos = firebase.database().ref('Productos/');
+  export const Users = firebase.database().ref('usuarios/');
 

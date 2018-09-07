@@ -7,8 +7,8 @@ function guest(func){
 	// const add = (path == "/Collection" || path == "/collection" )?"":<span><i className="material-icons" ><Link to="/Collection">search</Link></i></span>;
 	return (
 		<div className="">
-    <li class="dropdown-item"><i class="lni-lock"></i><Link to="login"> Log In</Link></li>
-    <li class="dropdown-item"><i class="lni-user"></i><Link to="signup"> Signup</Link></li>
+    <div className="dropdown-item"><i className="lni-lock"></i><Link to="login"> Log In</Link></div>
+    <div className="dropdown-item"><i className="lni-user"></i><Link to="signup"> Signup</Link></div>
 		
 			
 		</div>
@@ -19,7 +19,7 @@ function logout(func){
 	// const add = (path == "/Collection" || path == "/collection" )?"":<span><i className="material-icons"><Link to="/Collection">search</Link></i></span>;
 	return (
 		<div className="">
-		<li class="dropdown-item" onClick={func}><i class="lni-close" ></i>Log out</li>
+		<div className="dropdown-item" onClick={func}><i className="lni-close" ></i>Log out</div>
 		</div>
 	)
 }
@@ -33,99 +33,99 @@ function template() {
 		
     <div>
       
-      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
-        <div class="container">
+      <nav className="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div className="container">
           
-          <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              <span class="lni-menu"></span>
-              <span class="lni-menu"></span>
-              <span class="lni-menu"></span>
+          <div className="navbar-header">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+              <span className="lni-menu"></span>
+              <span className="lni-menu"></span>
+              <span className="lni-menu"></span>
             </button>
-            <Link to="Home" class="navbar-brand"><h1>Reedot</h1></Link>
+            <Link to="Home" className="navbar-brand"><h1>Reedot</h1></Link>
           </div>
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+          <div className="collapse navbar-collapse" id="main-navbar">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
                 
-                  <Link class="nav-link" to="Home">Home</Link>
-                
-              </li>
-              <li class="nav-item">
-                
-                  <Link class="nav-link" to="Category">Categories</Link>                  
+                  <Link className="nav-link" to="Home">Home</Link>
                 
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li className="nav-item">
+                
+                  <Link className="nav-link" to="Category">Categories</Link>                  
+                
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Listings
                 </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
-                  <a class="dropdown-item" href="adlistinglist">Ad Listing</a>
-                  <a class="dropdown-item" href="ads-details">Listing Detail</a>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
+                  <a className="dropdown-item" href="adlistinglist">Ad Listing</a>
+                  <a className="dropdown-item" href="ads-details">Listing Detail</a>
                 </div>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Pages 
                 </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="about">About Us</a>
-                  <a class="dropdown-item" href="services">Services</a>
-                  <a class="dropdown-item" href="ads-details">Ads Details</a>
-                  <Link class="dropdown-item" to="post-ads">Ads Post</Link>
-                  <a class="dropdown-item" href="pricing">Packages</a>
-                  <a class="dropdown-item" href="testimonial">Testimonial</a>
-                  <a class="dropdown-item" href="faq">FAQ</a>
-                  <a class="dropdown-item" href="404">404</a>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" href="about">About Us</a>
+                  <a className="dropdown-item" href="services">Services</a>
+                  <a className="dropdown-item" href="ads-details">Ads Details</a>
+                  <Link className="dropdown-item" to="post-ads">Ads Post</Link>
+                  <a className="dropdown-item" href="pricing">Packages</a>
+                  <a className="dropdown-item" href="testimonial">Testimonial</a>
+                  <a className="dropdown-item" href="faq">FAQ</a>
+                  <a className="dropdown-item" href="404">404</a>
                 </div>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Blog 
                 </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="blog">Blog - Right Sidebar</a>
-                  <a class="dropdown-item" href="blog-left-sidebar">Blog - Left Sidebar</a>
-                  <a class="dropdown-item" href="blog-grid-full-width"> Blog full width </a>
-                  <a class="dropdown-item" href="single-post">Blog Details</a>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" href="blog">Blog - Right Sidebar</a>
+                  <a className="dropdown-item" href="blog-left-sidebar">Blog - Left Sidebar</a>
+                  <a className="dropdown-item" href="blog-grid-full-width"> Blog full width </a>
+                  <a className="dropdown-item" href="single-post">Blog Details</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact">
+              <li className="nav-item">
+                <a className="nav-link" href="contact">
                   Contact
                 </a>
               </li>
             </ul>
-            <ul class="sign-in">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i> My Account</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="account-profile-setting"><i class="lni-home"></i> Account Home</a>
-                  <a class="dropdown-item" href="account-myads"><i class="lni-wallet"></i> My Ads</a>
-                  <a class="dropdown-item" href="account-favourite-ads"><i class="lni-heart"></i> Favourite ads</a>
-                  <a class="dropdown-item" href="account-archived-ads"><i class="lni-folder"></i> Archived</a>
+            <ul className="sign-in">
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="lni-user"></i> My Account</a>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" href="account-profile-setting"><i className="lni-home"></i> Account Home</a>
+                  <a className="dropdown-item" href="account-myads"><i className="lni-wallet"></i> My Ads</a>
+                  <a className="dropdown-item" href="account-favourite-ads"><i className="lni-heart"></i> Favourite ads</a>
+                  <a className="dropdown-item" href="account-archived-ads"><i className="lni-folder"></i> Archived</a>
                   
                   
                   
-                  {/* <a class="dropdown-item" href="forgot-password"><i class="lni-reload"></i> Forgot Password</a> */}
+                  {/* <a className="dropdown-item" href="forgot-password"><i className="lni-reload"></i> Forgot Password</a> */}
                   {this.props.islogged ? logout(this.signOut) : guest()}
                   
                 </div>
               </li>
             </ul>
-            <Link class="tg-btn" to="post-ads">
-              <i class="lni-pencil-alt"></i> Post An Ad
+            <Link className="tg-btn" to="post-ads">
+              <i className="lni-pencil-alt"></i> Post An Ad
             </Link>
           </div>
         </div>
 
         
-        <ul class="mobile-menu">
+        <ul className="mobile-menu">
           <li>
-            <a class="active" href="index">Home</a>
+            <a className="active" href="index">Home</a>
           </li>
           <li>
             <a href="category">Categories</a>
@@ -134,7 +134,7 @@ function template() {
             <a href="#">
             Listings
             </a>
-            <ul class="dropdown">
+            <ul className="dropdown">
               <li><a href="adlistinggrid">Ad Grid</a></li>
               <li><a href="adlistinglist">Ad Listing</a></li>
               <li><a href="ads-details">Listing Detail</a></li>
@@ -142,7 +142,7 @@ function template() {
           </li>
           <li>
             <a href="#">Pages</a>
-            <ul class="dropdown">
+            <ul className="dropdown">
               <li><a href="about">About Us</a></li>
               <li><a href="services">Services</a></li>
               <li><a href="ads-details">Ads Details</a></li>
@@ -155,7 +155,7 @@ function template() {
           </li>
           <li>
             <a href="#">Blog</a>
-            <ul class="dropdown">
+            <ul className="dropdown">
               <li><a href="blog">Blog - Right Sidebar</a></li>
               <li><a href="blog-left-sidebar">Blog - Left Sidebar</a></li>
               <li><a href="blog-grid-full-width"> Blog full width </a></li>
@@ -167,15 +167,15 @@ function template() {
           </li>
           <li>
             <a>My Account</a>
-            <ul class="dropdown">
-              <li><i class="lni-home"></i><a href="account-profile-setting"> Account Home</a></li>
-              <li><i class="lni-wallet"></i> <a href="account-myads">My Ads</a></li>
-              <li><i class="lni-heart"></i><a href="account-favourite-ads"> Favourite ads</a></li>
-              <li><i class="lni-folder"></i><a href="account-archived-ads"> Archived</a></li>
-              <li><i class="lni-lock"></i><a href="login"> Log In</a></li>
-              <li><i class="lni-user"></i><a href="signup"> Signup</a></li>
-              <li><i class="lni-reload"></i><a href="forgot-password"> Forgot Password</a></li>
-              <li><i class="lni-close"></i><a href="account-close">Account close</a></li>
+            <ul className="dropdown">
+              <li><i className="lni-home"></i><a href="account-profile-setting"> Account Home</a></li>
+              <li><i className="lni-wallet"></i> <a href="account-myads">My Ads</a></li>
+              <li><i className="lni-heart"></i><a href="account-favourite-ads"> Favourite ads</a></li>
+              <li><i className="lni-folder"></i><a href="account-archived-ads"> Archived</a></li>
+              <li><i className="lni-lock"></i><a href="login"> Log In</a></li>
+              <li><i className="lni-user"></i><a href="signup"> Signup</a></li>
+              <li><i className="lni-reload"></i><a href="forgot-password"> Forgot Password</a></li>
+              <li><i className="lni-close"></i><a href="account-close">Account close</a></li>
             </ul>
           </li>
         </ul>

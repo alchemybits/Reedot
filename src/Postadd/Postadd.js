@@ -2,7 +2,7 @@ import React    from "react";
 import template from "./Postadd.jsx";
 import * as firebase from 'firebase';
 import { connect } from 'react-redux';
-import { productos } from '../Firebase';
+import { productos,Users } from '../Firebase';
 import swal from "sweetalert2";
 
 function mapStateToProps(state) {
@@ -105,12 +105,37 @@ class Postadd extends React.Component {
           precio: PRICE,
           desc: DESC,
           url: task.snapshot.downloadURL,
-          categoria: CAT,
-          subcategoria: SUBCAT
+          categoria: CAT,          
+          firstname :  vfirstname,
+          lastname : vlastname,
+          phone : vphone,
+          addressa : vaddressa,
+          addressb : vaddressb,
+          country : vcountry,
+          state : vstate,
+		      city: vcity
+          
         });
 
+        var user = firebase.auth().currentUser;
 
-        console.log("THIS IS THE TEST!!!! ===> <=====",test);
+        Users.child(user.uid).update({
+          name: vfirstname
+
+        })
+
+        Users.child(user.uid).child('posts').child(test.ref.key).update({
+          name: NAME
+        })
+
+        
+
+        // Users.push({
+        //   user: this.props.user
+        // })
+
+
+        
         const toast = swal.mixin({
           toast: true,
           position: 'center',

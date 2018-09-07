@@ -62,93 +62,93 @@ class Home extends React.Component {
     <div className="home">
 		
     {/* <!-- Trending Categories Section Start --> */}
-    <section class="trending-cat section-padding">
+    <section className="trending-cat section-padding">
       <div id="root"></div>
-      <div class="container">
-        <h1 class="section-title">Product Categories</h1>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+      <div className="container">
+        <h1 className="section-title">Product Categories</h1>
+        <div className="row">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-1.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-1.png" alt="" />
                 </div>
                 <h4>Vehicle</h4>
                 <strong>189 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-2.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-2.png" alt="" />
                 </div>
                 <h4>Laptops</h4>
                 <strong>255 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-3.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-3.png" alt="" />
                 </div>
                 <h4>Mobiles</h4>
                 <strong>127 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-4.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-4.png" alt="" />
                 </div>
                 <h4>Electronics</h4>
                 <strong>69 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-5.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-5.png" alt="" />
                 </div>
                 <h4>Computer</h4>
                 <strong>172 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-6.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-6.png" alt="" />
                 </div>
                 <h4>Real Estate</h4>
                 <strong>150 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-7.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-7.png" alt="" />
                 </div>
                 <h4>Home Appliances</h4>
                 <strong>249 Ads</strong>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <a href="/category">
-              <div class="box">
-                <div class="icon">
-                  <img class="img-fluid" src="assets/img/category/img-8.png" alt="" />
+              <div className="box">
+                <div className="icon">
+                  <img className="img-fluid" src="assets/img/category/img-8.png" alt="" />
                 </div>
                 <h4>Jobs</h4>
                 <strong>14 9Ads</strong>
@@ -161,232 +161,232 @@ class Home extends React.Component {
     {/* <!-- Trending Categories Section End --> */}
 
     {/* <!-- Featured Section Start --> */}
-    <section class="featured section-padding">
-      <div class="container">
-        <h1 class="section-title">Latest Products</h1>
-        <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+    <section className="featured section-padding">
+      <div className="container">
+        <h1 className="section-title">Latest Products</h1>
+        <div className="row">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img-12.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img-12.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Furnitures > Office</a>
                 </div>
                 <h4><a href="ads-details.html">Office Furnitures</a></h4>
                 <span>Last Updated: 5 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> New York</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 17 Mar, 8:30 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 17 Mar, 8:30 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> David Givens</a>
+                    <a href="#"><i className="lni-user"></i> David Givens</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> Used</a>
+                    <a href="#"><i className="lni-package"></i> Used</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 1280</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 1280</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img2.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img2.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Loptop > Accessories</a>
                 </div>
                 <h4><a href="ads-details.html">Fresh Macbook Pro 2017</a></h4>
                 <span>Last Updated: 8 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> New York</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 7 Mar, 10:10 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 7 Mar, 10:10 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> John Smith</a>
+                    <a href="#"><i className="lni-user"></i> John Smith</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> Used</a>
+                    <a href="#"><i className="lni-package"></i> Used</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 1100</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 1100</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img-11.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img-11.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Electronics > Naturial</a>
                 </div>
                 <h4><a href="ads-details.html">Canon Photography Camera</a></h4>
                 <span>Last Updated: 4 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> Delaware</a>
+                    <a href="#"><i className="lni-map-marker"></i> Delaware</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 7 Feb, 6:10 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 7 Feb, 6:10 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> Justyna M.</a>
+                    <a href="#"><i className="lni-user"></i> Justyna M.</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> Used</a>
+                    <a href="#"><i className="lni-package"></i> Used</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 205</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 205</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img1.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img1.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Mobiles > Accessories</a>
                 </div>
                 <h4><a href="ads-details.html">Apple iPhone X</a></h4>
                 <span>Last Updated: 13 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> Albama</a>
+                    <a href="#"><i className="lni-map-marker"></i> Albama</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 3 Jan, 9:05 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 3 Jan, 9:05 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> Mh Arman</a>
+                    <a href="#"><i className="lni-user"></i> Mh Arman</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> Brand New</a>
+                    <a href="#"><i className="lni-package"></i> Brand New</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 799</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 799</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img-09.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img-09.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Loptop > Accessories</a>
                 </div>
                 <h4><a href="ads-details.html">Amazing Room for Rent</a></h4>
                 <span>Last Updated: 4 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> Chicago</a>
+                    <a href="#"><i className="lni-map-marker"></i> Chicago</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 1 Jan, 7:00 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 1 Jan, 7:00 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> Elon Musk</a>
+                    <a href="#"><i className="lni-user"></i> Elon Musk</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> N/A</a>
+                    <a href="#"><i className="lni-package"></i> N/A</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 250</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 250</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="featured-box">
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+            <div className="featured-box">
               <figure>
-                <div class="icon">
-                  <i class="lni-heart"></i>
+                <div className="icon">
+                  <i className="lni-heart"></i>
                 </div>
-                <a href="#"><img class="img-fluid" src="assets/img/featured/img-10.jpg" alt="" /></a>
+                <a href="#"><img className="img-fluid" src="assets/img/featured/img-10.jpg" alt="" /></a>
               </figure>
-              <div class="feature-content">
-                <div class="tg-product">
+              <div className="feature-content">
+                <div className="tg-product">
                   <a href="#">Office > Stationary</a>
                 </div>
                 <h4><a href="ads-details.html">Custom Notebooks</a></h4>
                 <span>Last Updated: 12 hours ago</span>
-                <ul class="address">
+                <ul className="address">
                   <li>
-                    <a href="#"><i class="lni-map-marker"></i> Washington</a>
+                    <a href="#"><i className="lni-map-marker"></i> Washington</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-alarm-clock"></i> 12 Dec, 10:10 pm</a>
+                    <a href="#"><i className="lni-alarm-clock"></i> 12 Dec, 10:10 pm</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-user"></i> John Smith</a>
+                    <a href="#"><i className="lni-user"></i> John Smith</a>
                   </li>
                   <li>
-                    <a href="#"><i class="lni-package"></i> Brand New</a>
+                    <a href="#"><i className="lni-package"></i> Brand New</a>
                   </li>
                 </ul>
-                <div class="btn-list">
-                  <a class="btn-price" href="#">$ 25</a>
-                  <a class="btn btn-common" href="ads-details.html">
-                    <i class="lni-list"></i>
+                <div className="btn-list">
+                  <a className="btn-price" href="#">$ 25</a>
+                  <a className="btn btn-common" href="ads-details.html">
+                    <i className="lni-list"></i>
                     View Details
                   </a>
                 </div>
@@ -399,294 +399,294 @@ class Home extends React.Component {
     {/* <!-- Featured Section End --> */}
 
     {/* <!-- Featured Listings Start --> */}
-    <section class="featured-lis section-padding" >
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 wow fadeIn" data-wow-delay="0.5s">
-            <h3 class="section-title">Featured Products</h3>
-            <div id="new-products" class="owl-carousel">
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img1.jpg" alt="" />  
-                    <div class="overlay">
+    <section className="featured-lis section-padding" >
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12 wow fadeIn" data-wow-delay="0.5s">
+            <h3 className="section-title">Featured Products</h3>
+            <div id="new-products" className="owl-carousel">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img1.jpg" alt="" />  
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 89.00</span>
+                    <span className="price">$ 89.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Laptop</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Laptop</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-red"><a href="#">New</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-red"><a href="#">New</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img2.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img2.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 89.00</span>
+                    <span className="price">$ 89.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Headphones</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Headphones</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-yellow"><a href="#">Sale</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img3.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img3.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 49.00</span>
+                    <span className="price">$ 49.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Furniture</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Furniture</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-red"><a href="#">New</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-red"><a href="#">New</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img4.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img4.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 11.99</span>
+                    <span className="price">$ 11.99</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Apple IPhone</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Apple IPhone</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-yellow"><a href="#">Sele</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-yellow"><a href="#">Sele</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img5.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img5.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 99.00</span>
+                    <span className="price">$ 99.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">MacBook Pro</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">MacBook Pro</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-red"><a href="#">New</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-red"><a href="#">New</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img6.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img6.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 89.00</span>
+                    <span className="price">$ 89.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">iPad Pro</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">iPad Pro</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-yellow"><a href="#">Sale</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img7.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img7.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 19.00</span>
+                    <span className="price">$ 19.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Mobiles</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Mobiles</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star"></i>
-                            <i class="lni-star"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star"></i>
+                            <i className="lni-star"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-red"><a href="#">New</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-red"><a href="#">New</a></span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="product-item">
-                  <div class="carousel-thumb">
-                    <img class="img-fluid" src="assets/img/product/img8.jpg" alt="" /> 
-                    <div class="overlay">
+              <div className="item">
+                <div className="product-item">
+                  <div className="carousel-thumb">
+                    <img className="img-fluid" src="assets/img/product/img8.jpg" alt="" /> 
+                    <div className="overlay">
                     </div> 
-                    <span class="price">$ 123.00</span>
+                    <span className="price">$ 123.00</span>
                   </div>    
-                  <div class="product-content">
-                    <h3 class="product-title"><a href="ads-details.html">Nexus Phone</a></h3>
-                    <a href="#"><i class="lni-bookmark"></i> New York</a>
-                    <a href="#"><i class="lni-map-marker"></i> California</a>
-                    <div class="icon">
-                      <i class="lni-heart"></i>
+                  <div className="product-content">
+                    <h3 className="product-title"><a href="ads-details.html">Nexus Phone</a></h3>
+                    <a href="#"><i className="lni-bookmark"></i> New York</a>
+                    <a href="#"><i className="lni-map-marker"></i> California</a>
+                    <div className="icon">
+                      <i className="lni-heart"></i>
                     </div> 
-                    <div class="card-text">
-                      <div class="meta">
-                        <div class="float-left">
-                          <span class="icon-wrap">
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
-                            <i class="lni-star-filled"></i>
+                    <div className="card-text">
+                      <div className="meta">
+                        <div className="float-left">
+                          <span className="icon-wrap">
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
+                            <i className="lni-star-filled"></i>
                           </span>
-                          <span class="count-review">
+                          <span className="count-review">
                             <span>1</span> Reviews
                           </span>
                         </div>
-                        <div class="float-right">
-                          <span class="btn-product bg-yellow"><a href="#">Sale</a></span>
+                        <div className="float-right">
+                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
                         </div>
                       </div>
                     </div>
@@ -701,76 +701,76 @@ class Home extends React.Component {
     {/* <!-- Featured Listings End --> */}
 
     {/* <!-- Services Section Start --> */}
-    <section class="services section-padding">
-      <div class="container">
-        <div class="row">
+    <section className="services section-padding">
+      <div className="container">
+        <div className="row">
           {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.2s">
-              <div class="icon">
-                <i class="lni-book"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="0.2s">
+              <div className="icon">
+                <i className="lni-book"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">Full Documented</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
             </div>
           </div>
           {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.4s">
-              <div class="icon">
-                <i class="lni-leaf"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="0.4s">
+              <div className="icon">
+                <i className="lni-leaf"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">Clean & Modern Design</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
             </div>
           </div>
           {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
-              <div class="icon">
-                <i class="lni-cog"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="0.6s">
+              <div className="icon">
+                <i className="lni-cog"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">Great Features</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
             </div>
           </div>
           {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.8s">
-              <div class="icon">
-                <i class="lni-spray"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="0.8s">
+              <div className="icon">
+                <i className="lni-spray"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">Completely Customizable</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
             </div>
           </div>
            {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="1s">
-              <div class="icon">
-                <i class="lni-emoji-smile"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="1s">
+              <div className="icon">
+                <i className="lni-emoji-smile"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">User Friendly</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
             </div>
           </div>
            {/* <!-- Services item --> */}
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="1.2s">
-              <div class="icon">
-                <i class="lni-layout"></i>
+          <div className="col-md-6 col-lg-4 col-xs-12">
+            <div className="services-item wow fadeInRight" data-wow-delay="1.2s">
+              <div className="icon">
+                <i className="lni-layout"></i>
               </div>
-              <div class="services-content">
+              <div className="services-content">
                 <h3><a href="#">Awesome Layout</a></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda facere.</p>
               </div>
@@ -782,38 +782,38 @@ class Home extends React.Component {
     {/* <!-- Services Section End --> */}
 
     {/* <!-- Counter Area Start--> */}
-    <section class="counter-section section-padding">
-      <div class="container">
-        <div class="row">
+    <section className="counter-section section-padding">
+      <div className="container">
+        <div className="row">
           {/* <!-- Counter Item --> */}
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter">
-              <div class="icon"><i class="lni-layers"></i></div>
-              <div class="counterUp">12090</div>
+          <div className="col-md-3 col-sm-6 work-counter-widget text-center">
+            <div className="counter">
+              <div className="icon"><i className="lni-layers"></i></div>
+              <div className="counterUp">12090</div>
               <p>Regular Ads</p>
             </div>
           </div>
           {/* <!-- Counter Item --> */}
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter">
-              <div class="icon"><i class="lni-map"></i></div>
-              <div class="counterUp">350</div>
+          <div className="col-md-3 col-sm-6 work-counter-widget text-center">
+            <div className="counter">
+              <div className="icon"><i className="lni-map"></i></div>
+              <div className="counterUp">350</div>
               <p>Locations</p>
             </div>
           </div>
           {/* <!-- Counter Item --> */}
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter">
-              <div class="icon"><i class="lni-user"></i></div>
-              <div class="counterUp">23453</div>
+          <div className="col-md-3 col-sm-6 work-counter-widget text-center">
+            <div className="counter">
+              <div className="icon"><i className="lni-user"></i></div>
+              <div className="counterUp">23453</div>
               <p>Reguler Members</p>
             </div>
           </div>
           {/* <!-- Counter Item --> */}
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter">
-              <div class="icon"><i class="lni-briefcase"></i></div>
-              <div class="counterUp">250</div>
+          <div className="col-md-3 col-sm-6 work-counter-widget text-center">
+            <div className="counter">
+              <div className="icon"><i className="lni-briefcase"></i></div>
+              <div className="counterUp">250</div>
               <p>Premium Ads</p>
             </div>
           </div>
@@ -823,62 +823,62 @@ class Home extends React.Component {
     {/* <!-- Counter Area End--> */}
 
     {/* <!-- Special Ooffer Section Start --> */}
-    <section class="special-offer section-padding">
-      <div class="container">
-        <h1 class="section-title">Daily Deals</h1>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <a href="ads-details.html"><div class="special-product">
+    <section className="special-offer section-padding">
+      <div className="container">
+        <h1 className="section-title">Daily Deals</h1>
+        <div className="row">
+          <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <a href="ads-details.html"><div className="special-product">
               <img src="assets/img/gallery/img-1.jpg" alt="" />
-              <div class="product-text">
+              <div className="product-text">
                 <h3>Special Offer</h3>
-                <div class="offer-details">
-                  <h5 class="price">$ 1400</h5>
+                <div className="offer-details">
+                  <h5 className="price">$ 1400</h5>
                   <h4>Buy IphoneX</h4>
                   <p>with special gift</p>
                 </div>
-                <div class="icon-footer">
-                  <a href="#"><i class="icon-arrow-right-circle"></i></a>
+                <div className="icon-footer">
+                  <a href="#"><i className="icon-arrow-right-circle"></i></a>
                 </div>
               </div>
             </div></a>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <a href="ads-details.html"><div class="special-product">
+          <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <a href="ads-details.html"><div className="special-product">
               <img src="assets/img/gallery/img-2.jpg" alt="" />
-              <div class="product-text">
+              <div className="product-text">
                 <h3>Special Offer</h3>
-                <div class="offer-details">
-                  <h5 class="price">$ 850</h5>
+                <div className="offer-details">
+                  <h5 className="price">$ 850</h5>
                   <h4>Buy Galaxy Note 8</h4>
                   <p>with special gift</p>
                 </div>
-                <div class="icon-footer">
-                  <a href="#"><i class="icon-arrow-right-circle"></i></a>
+                <div className="icon-footer">
+                  <a href="#"><i className="icon-arrow-right-circle"></i></a>
                 </div>
               </div>
             </div></a>
           </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-              <div class="col-lg-12 col-md-6 col-sm-12">
-                <a href="ads-details.html"><div class="special-product mb-30">
-                  <img class="img-fluid" src="assets/img/gallery/img-3.jpg" alt="" />
-                  <div class="product-text">
-                    <p class="text">Colorful Outdoor <br /> Mattresses That Connect to Each Other</p>
-                    <div class="icon-footer">
-                      <h5 class="price">$ 76</h5>
+          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div className="row">
+              <div className="col-lg-12 col-md-6 col-sm-12">
+                <a href="ads-details.html"><div className="special-product mb-30">
+                  <img className="img-fluid" src="assets/img/gallery/img-3.jpg" alt="" />
+                  <div className="product-text">
+                    <p className="text">Colorful Outdoor <br /> Mattresses That Connect to Each Other</p>
+                    <div className="icon-footer">
+                      <h5 className="price">$ 76</h5>
                     </div>
                   </div>
                 </div></a>
               </div>
-              <div class="col-lg-12 col-md-6 col-sm-12">
-                <a href="ads-details.html"><div class="special-product">
-                  <img class="img-fluid" src="assets/img/gallery/img-5.jpg" alt="" />
-                  <div class="product-text">
-                    <p class="text">Handmade Hardwood & <br /> Rope Toys from Monroe Workshop</p>
-                    <div class="icon-footer">
-                      <h5 class="price">$ 50</h5>
+              <div className="col-lg-12 col-md-6 col-sm-12">
+                <a href="ads-details.html"><div className="special-product">
+                  <img className="img-fluid" src="assets/img/gallery/img-5.jpg" alt="" />
+                  <div className="product-text">
+                    <p className="text">Handmade Hardwood & <br /> Rope Toys from Monroe Workshop</p>
+                    <div className="icon-footer">
+                      <h5 className="price">$ 50</h5>
                     </div>
                   </div>
                 </div></a>
@@ -891,67 +891,67 @@ class Home extends React.Component {
     {/* <!-- Special Ooffer Section End --> */}
 
     {/* <!-- Testimonial Section Start --> */}
-    <section class="testimonial section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div id="testimonials" class="owl-carousel">
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
+    <section className="testimonial section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="testimonials" className="owl-carousel">
+              <div className="item">
+                <div className="testimonial-item">
+                  <div className="img-thumb">
                     <img src="assets/img/testimonial/img1.png" alt="" />
                   </div>
-                  <div class="content">
+                  <div className="content">
                     <h2><a href="#">John Doe</a></h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
                     <h3>Developer at of <a href="#">xyz company</a></h3>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
+              <div className="item">
+                <div className="testimonial-item">
+                  <div className="img-thumb">
                     <img src="assets/img/testimonial/img2.png" alt="" />
                   </div>
-                  <div class="content">
+                  <div className="content">
                     <h2><a href="#">Jessica</a></h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
                     <h3>Developer at of <a href="#">xyz company</a></h3>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
+              <div className="item">
+                <div className="testimonial-item">
+                  <div className="img-thumb">
                     <img src="assets/img/testimonial/img3.png" alt="" />
                   </div>
-                  <div class="content">
+                  <div className="content">
                     <h2><a href="#">Johnny Zeigler</a></h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
                     <h3>Developer at of <a href="#">xyz company</a></h3>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
+              <div className="item">
+                <div className="testimonial-item">
+                  <div className="img-thumb">
                     <img src="assets/img/testimonial/img1.png" alt="" />
                   </div>
-                  <div class="content">
+                  <div className="content">
                     <h2><a href="#">John Doe</a></h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
                     <h3>Developer at of <a href="#">xyz company</a></h3>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
+              <div className="item">
+                <div className="testimonial-item">
+                  <div className="img-thumb">
                     <img src="assets/img/testimonial/img2.png" alt="" />
                   </div>
-                  <div class="content">
+                  <div className="content">
                     <h2><a href="#">Jessica</a></h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
                     <h3>Developer at of <a href="#">xyz company</a></h3>
                   </div>
                 </div>
@@ -964,17 +964,17 @@ class Home extends React.Component {
     {/* <!-- Testimonial Section End --> */}
 
     {/* <!-- Subscribe Section Start --> */}
-    <section class="subscribes section-padding">
-      <div class="container">
-        <div class="row wrapper-sub">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <section className="subscribes section-padding">
+      <div className="container">
+        <div className="row wrapper-sub">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <p>Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!</p>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <form>
-              <div class="subscribe">
-                <input class="form-control" name="email" placeholder="Your email here" required="" type="email" /> 
-                <button class="btn btn-common" type="submit">Subscribe</button>
+              <div className="subscribe">
+                <input className="form-control" name="email" placeholder="Your email here" required="" type="email" /> 
+                <button className="btn btn-common" type="submit">Subscribe</button>
               </div>
             </form>
           </div>
@@ -986,21 +986,21 @@ class Home extends React.Component {
     {/* <!-- Footer Section Start --> */}
     <footer>
       {/* <!-- Footer Area Start --> */}
-      <section class="footer-Content">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
-              <div class="widget">
-                <h3 class="block-title">About Us</h3>
-                <div class="textwidget">
+      <section className="footer-Content">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div className="widget">
+                <h3 className="block-title">About Us</h3>
+                <div className="textwidget">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed, auctor ut purus.</p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
-              <div class="widget">
-                <h3 class="block-title">Useful Links</h3>
-                <ul class="menu">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div className="widget">
+                <h3 className="block-title">Useful Links</h3>
+                <ul className="menu">
                   <li><a href="#">How to Sell Faster</a></li>
                   <li><a href="#">Membership Details</a></li>
                   <li><a href="#">Why Choose</a></li>
@@ -1009,10 +1009,10 @@ class Home extends React.Component {
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
-              <div class="widget">
-                <h3 class="block-title">Help & Support</h3>
-                <ul class="menu">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div className="widget">
+                <h3 className="block-title">Help & Support</h3>
+                <ul className="menu">
                   <li><a href="#">Live Chat</a></li>
                   <li><a href="#">Privacy Policy</a></li>
                   <li><a href="#">Purchase Protection</a></li>
@@ -1021,10 +1021,10 @@ class Home extends React.Component {
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
-              <div class="widget">
-                <h3 class="block-title">Contact Information</h3>
-                <ul class="contact-footer">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div className="widget">
+                <h3 className="block-title">Contact Information</h3>
+                <ul className="contact-footer">
                   <li>
                     <strong>Address :</strong><span>1900 Pico Blvd, New York</span>
                   </li>
@@ -1035,11 +1035,11 @@ class Home extends React.Component {
                     <strong>E-mail :</strong><span><a href="#">info@example.com</a></span>
                   </li>
                 </ul>  
-                <ul class="footer-social">
-                  <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                  <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                  <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                  <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                <ul className="footer-social">
+                  <li><a className="facebook" href="#"><i className="lni-facebook-filled"></i></a></li>
+                  <li><a className="twitter" href="#"><i className="lni-twitter-filled"></i></a></li>
+                  <li><a className="linkedin" href="#"><i className="lni-linkedin-fill"></i></a></li>
+                  <li><a className="google-plus" href="#"><i className="lni-google-plus"></i></a></li>
                 </ul>          
               </div>
             </div>
@@ -1050,14 +1050,14 @@ class Home extends React.Component {
       
       {/* <!-- Copyright Start  --> */}
       <div id="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="site-info float-left">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="site-info float-left">
                 <p>All copyrights reserved &copy; 2018 - Designed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
               </div>              
-              <div class="float-right">  
-                <ul class="bottom-card">
+              <div className="float-right">  
+                <ul className="bottom-card">
                   <li>
                       <a href="#"><img src="assets/img/footer/card1.jpg" alt="card" /></a>
                   </li>
@@ -1082,8 +1082,8 @@ class Home extends React.Component {
     {/* <!-- Footer Section End -->  */}
 
     {/* <!-- Go to Top Link --> */}
-    <a href="#" class="back-to-top">
-    	<i class="lni-chevron-up"></i>
+    <a href="#" className="back-to-top">
+    	<i className="lni-chevron-up"></i>
     </a>
 
     {/* <!-- Preloader --> 

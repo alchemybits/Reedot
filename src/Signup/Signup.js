@@ -3,6 +3,7 @@ import template from "./Signup.jsx";
 import swal from "sweetalert2";
 
 import * as firebase from "firebase";
+import { database } from '../Firebase';
 
 class Signup extends React.Component {
 
@@ -40,25 +41,39 @@ constructor(props) {
     e.preventDefault();
     const toast = this.toast;
     firebase.auth().createUserWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password).then((Luser) => {
+
+      
+        
+        
         // [END createwithemail]
         // callSomeFunction(); Optional
         var user = firebase.auth().currentUser;
+        console.log('UIJEIEJFIW',user);
         user.updateProfile({
             displayName: this.state.name
         }).then(function() {
-            // console.log("YES");
+          
+           console.log("YES");
+            database.child("usuarios").child(user.uid).update({
+              user: user.displayName
+  
+            })
+
             toast({
               type: 'success',
               title: 'Signed in successfully'
             })
         }, function(error) {
-            // console.log("wat?");
+            
             toast({
               type: 'error',
               title: 'Something bad happened... please report this.',
               html: error
             })
-        });        
+        });
+        console.log('USER UID',user.uid);
+        
+
     }, function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -71,7 +86,11 @@ constructor(props) {
               'warning'
             );
         } else {
-            console.error(error);
+          toast({
+            type: 'error',
+            //title: 'Something bad happened... please report this.',
+            title: error.message
+          })
         }
         // [END_EXCLUDE]
     });

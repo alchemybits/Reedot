@@ -90,12 +90,12 @@ class App extends React.Component {
         <div>
         <Switch>
           {/* <!-- Header Area wrapper Starts --> */}
-          <header id="header-wrap">
+          <div id="header-wrap">
           <MenuBar islogged={this.state.authed} ></MenuBar>
-          <Herosection router={this.context.router} ></Herosection>
+          <Herosection ></Herosection>
             
 
-          </header>
+          </div>
           {/* <!-- Header Area wrapper End --> */}
 
           

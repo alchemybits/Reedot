@@ -28,7 +28,7 @@ class menuBar extends React.Component {
 	    e.preventDefault();
 	    firebase.auth().signOut().then(function() {
 	      // Sign-out successful.
-	      swal({title:'Have a nice day!',toast: true,position:"center",showConfirmButton: false,timer: 2000,});
+	      swal({type: 'success',title:'Have a nice day!',toast: true,position:"center",showConfirmButton: false,timer: 2000,});
 	    }).catch(function(error) {
 	      // An error happened.
 	      swal("Yikes somethng HAPPEND","error");

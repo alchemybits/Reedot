@@ -29,53 +29,53 @@ constructor(props) {
     this.userLogin = this.userLogin.bind(this);
     this.toggleClass = this.toggleClass.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.register = this.register.bind(this);
+    
 
   }
 
 
 
-  register(e){
+  // register(e){
 
-    e.preventDefault();
-    const toast = this.toast;
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((Luser) => {
-        // [END createwithemail]
-        // callSomeFunction(); Optional
-        var user = firebase.auth().currentUser;
-        user.updateProfile({
-            displayName: this.state.name
-        }).then(function() {
-            // console.log("YES");
-            toast({
-              type: 'success',
-              title: 'Signed in successfully'
-            })
-        }, function(error) {
-            // console.log("wat?");
-            toast({
-              type: 'error',
-              title: 'Something bad happened... please report this.',
-              html: error
-            })
-        });        
-    }, function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode === 'auth/weak-password') {
-            swal(
-              'oh OH?',
-              'your password is too weak..?',
-              'warning'
-            );
-        } else {
-            console.error(error);
-        }
-        // [END_EXCLUDE]
-    });
-  }
+  //   e.preventDefault();
+  //   const toast = this.toast;
+  //   firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((Luser) => {
+  //       // [END createwithemail]
+  //       // callSomeFunction(); Optional
+  //       var user = firebase.auth().currentUser;
+  //       user.updateProfile({
+  //           displayName: this.state.name
+  //       }).then(function() {
+  //            console.log("YES");
+  //           toast({
+  //             type: 'success',
+  //             title: 'Signed in successfully'
+  //           })
+  //       }, function(error) {
+  //           // console.log("wat?");
+  //           toast({
+  //             type: 'error',
+  //             title: 'Something bad happened... please report this.',
+  //             html: error
+  //           })
+  //       });        
+  //   }, function(error) {
+  //       // Handle Errors here.
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // [START_EXCLUDE]
+  //       if (errorCode === 'auth/weak-password') {
+  //           swal(
+  //             'oh OH?',
+  //             'your password is too weak..?',
+  //             'warning'
+  //           );
+  //       } else {
+  //           console.error(error);
+  //       }
+  //       // [END_EXCLUDE]
+  //   });
+  // }
 
   toggleClass(e){
     const container = document.querySelector('.container');

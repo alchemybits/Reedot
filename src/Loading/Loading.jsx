@@ -5,7 +5,7 @@ function template() {
   return (
     <div className="loading">
       <div id="preloader">
-      	<div class="loader" id="loader-1"></div>
+      	<div className="loader" id="loader-1"></div>
     	</div>
     </div>
   );
