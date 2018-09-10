@@ -1,9 +1,8 @@
-import { FETCH_PRODUCTOS } from '../Actions/Actions';
+import { FETCH_USER } from '../Actions/Actions';
 
 export default function (state = {}, action){
 	switch(action.type){
-		case FETCH_PRODUCTOS:
-			console.log("im here! FETCH_PRODUCTOS");
+		case FETCH_USER:
 			return action.payload;
 		default:
 			return state

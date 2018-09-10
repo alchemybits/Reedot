@@ -1,29 +1,31 @@
 import React    from "react";
 import template from "./Request.jsx";
 import { connect } from 'react-redux';
-import { getProductos,getThumbnails } from '../Actions/Actions';
+import { getProductos,getThumbnails,getFeaturedProductos } from '../Actions/Actions';
+
+
 
 function mapStateToProps(state) {
-  
-
   //console.log("state in props from PRODUCTS =>",state);
   return {
-    productos: state.productos,
-    thumbnails: state.thumbnails
+    productos: state.productos
   };
 }
 
 
 class Request extends React.Component {
-  constructor(props){
-    super(props);
-
+  constructor(){
+    super();
+    
     this.state = {
+      productos: ["0"],
       collection: []
-    }
+    };
 
     this.ssearchQueryearch = this.searchQuery.bind(this);
   }
+
+  
   
   getThumbnail(s){
 
@@ -45,39 +47,18 @@ class Request extends React.Component {
 		return tbn;
 
 
+  }  
+
+  componentDidMount(){
+    
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ productos: nextProps.productos });  
+  }
+
   componentWillMount() {
-    const cat = this.props.match.params.cat;
-    const subcat = this.props.match.params.subcat;
-    this.props.getProductos(cat,subcat);
-    this.props.getThumbnails();
-    
-      
-  }
-
-  componentWillReceiveProps(nextProps){
-    if (this.props.match.params.cat !== nextProps.match.params.cat) {
-      this.props.getProductos(nextProps.match.params.cat);
-    }
-    if (this.props.match.params.subcat !== nextProps.match.params.subcat) {
-      this.props.getProductos(nextProps.match.params.cat,nextProps.match.params.subcat);
-    }
-    
-  }
-
-  search(){
-    const search = document.getElementById("searchbar-input");
-    search.classList.toggle("opensearch");
-    search.classList.toggle("closesearch");
-    const icon = document.getElementById("searchbar-icon");
-    icon.classList.toggle("fa-search");
-    icon.classList.toggle("fa-times");
-    
-  }
-
-  goTo(query){
-    if(query)
-    window.location = query;
+    this.props.getProductos();
   }
 
   searchQuery(e){
@@ -93,4 +74,4 @@ class Request extends React.Component {
   }
 }
 
-export default connect(mapStateToProps,{ getProductos,getThumbnails })(Request);
+export default connect(mapStateToProps,{ getProductos })(Request);

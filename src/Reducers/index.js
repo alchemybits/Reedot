@@ -1,12 +1,18 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import torneoReducer from './torneoReducer';
+import productoReducer from './productoReducer';
+import thumbnailReducer from './thumbnailReducer';
+import userReducer from './userReducer';
+import cartReducer from './cartReducer';
 
 const rootReducer = combineReducers({
 	form: formReducer,
-	torneos: torneoReducer,
 	count: 42,
-	name: "Armando"
+	name: "Armando",
+	productos: productoReducer,
+	thumbnails: thumbnailReducer,
+	user: userReducer,
+	cart: cartReducer
 });
 
 export default rootReducer;
