@@ -12,5 +12,9 @@ var config = {
 
   export const database = firebase.database().ref('/');
   export const productos = firebase.database().ref('Productos/');
+  export const featuredProductos = firebase.database().ref('Productos/');
+  export const requests = firebase.database().ref('Requests/');
   export const Users = firebase.database().ref('users/');
+  export const thumbnails = firebase.database().ref('images/');  
+  export const Carts = firebase.database().ref('Carts/');
 

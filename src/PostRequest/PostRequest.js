@@ -1,20 +1,12 @@
 import React    from "react";
-import template from "./Postadd.jsx";
+import template from "./PostRequest.jsx";
 import * as firebase from 'firebase';
 import { connect } from 'react-redux';
-import { productos,Users } from '../Firebase';
+import { productos,Users,requests } from '../Firebase';
 import swal from "sweetalert2";
 
-function mapStateToProps(state) {
-  return {
-    user: state.user
-  };
-}
-
-class Postadd extends React.Component {
-
-
-	constructor(props)
+class PostRequest extends React.Component {
+  constructor(props)
 	{
 		super();
 
@@ -41,6 +33,7 @@ class Postadd extends React.Component {
    
     
   }
+
   checkInputs(e){
     e.preventDefault();    
     let ans;
@@ -94,6 +87,7 @@ class Postadd extends React.Component {
 
 
   }
+  
 
 	newProduct(event){
     event.preventDefault();
@@ -120,12 +114,11 @@ class Postadd extends React.Component {
     name.value = "";
     price.value = "";
     description.value = "";
-
-    let negotiable = false;
+    
+    let negotiable = "false";
     if(this.negotiable){
       negotiable = this.negotiable.checked;
     }
-    
 
 		const vfirstname = this.firstname.value;
 		const vlastname = this.lastname.value;
@@ -141,7 +134,7 @@ class Postadd extends React.Component {
     
     // wrap.setAttribute('data-text',  this.file.name.replace(/.*(\/|\\)/, ''));
     
-    let storageRef = firebase.storage().ref('productos/' + this.file.name);
+    let storageRef = firebase.storage().ref('requests/' + this.file.name);
 
     let task = storageRef.put(this.file);
 
@@ -159,7 +152,7 @@ class Postadd extends React.Component {
         alert("oops, something happend!",err);
       },
       function complete(pic){
-        const test = productos.push({
+        const test = requests.push({
           nombre: NAME,
           precio: PRICE,
           desc: DESC,
@@ -173,7 +166,7 @@ class Postadd extends React.Component {
           country : vcountry,
           state : vstate,
           city: vcity,
-          negotiable: negotiable
+          Negotiable: negotiable
           
         });
 
@@ -184,7 +177,7 @@ class Postadd extends React.Component {
 
         })
 
-        Users.child(user.uid).child('posts').child(test.ref.key).update({
+        Users.child(user.uid).child('requests').child(test.ref.key).update({
           name: NAME
         })
 
@@ -224,4 +217,4 @@ class Postadd extends React.Component {
   }
 }
 
-export default Postadd;
+export default PostRequest;

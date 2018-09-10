@@ -10,6 +10,7 @@ import MenuBar from "./menuBar/menuBar";
 import Herosection from "./Herosection/Herosection";
 import Postadd from "./Postadd/Postadd";
 import Request from "./Request/Request";
+import PostRequest from "./PostRequest/PostRequest";
 
 import { connect } from 'react-redux';
 
@@ -44,9 +45,8 @@ function PublicRoute ({component: Component, authed, ...rest}) {
   return (
     <Route
         {...rest}
-      render={(props) => authed === false
-        ? <Component {...props} />
-        : <Redirect to='/Home' />}
+      render={(props) =>  <Component {...props} />
+        }
     />
   )
 }
@@ -106,7 +106,13 @@ class App extends React.Component {
             
             
             <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
-            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/Requests' component={Request} />            
+
+            <Route path = "/requests/:cat/:subcat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/requests/:cat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/requests" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+
+            {/* <PublicRoute authed={this.state.authed} user={this.state.user} path='/requests' component={Request} />             */}
+            <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-request' component={PostRequest} />            
             <PublicRoute authed={this.state.authed} path='/login' component={Login} />
             <PublicRoute authed={this.state.authed} path='/signup' component={Signup} />
             <PublicRoute authed={this.state.authed} path='/Category' component={Category} />

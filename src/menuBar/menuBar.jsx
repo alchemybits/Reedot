@@ -79,47 +79,7 @@ function template() {
                   
                 
               </li>
-              {/*<li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Listings
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
-                  <a className="dropdown-item" href="adlistinglist">Ad Listing</a>
-                  <a className="dropdown-item" href="ads-details">Listing Detail</a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Pages 
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="about">About Us</a>
-                  <a className="dropdown-item" href="services">Services</a>
-                  <a className="dropdown-item" href="ads-details">Ads Details</a>
-                  <Link className="dropdown-item" to="post-ads">Ads Post</Link>
-                  <a className="dropdown-item" href="pricing">Packages</a>
-                  <a className="dropdown-item" href="testimonial">Testimonial</a>
-                  <a className="dropdown-item" href="faq">FAQ</a>
-                  <a className="dropdown-item" href="404">404</a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Blog 
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="blog">Blog - Right Sidebar</a>
-                  <a className="dropdown-item" href="blog-left-sidebar">Blog - Left Sidebar</a>
-                  <a className="dropdown-item" href="blog-grid-full-width"> Blog full width </a>
-                  <a className="dropdown-item" href="single-post">Blog Details</a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="contact">
-                  Contact
-                </a>
-              </li> */}
+              
             </ul>
             <ul className="sign-in">
               <li className="nav-item dropdown">
@@ -140,6 +100,9 @@ function template() {
             </ul>
             <Link className="tg-btn" to="post-ads">
               <i className="lni-pencil-alt"></i> Post An Ad
+            </Link>
+            <Link className="tg-btn" to="post-request">
+              <i className="lni-pencil-alt"></i> Post A Request
             </Link>
           </div>
         </div>

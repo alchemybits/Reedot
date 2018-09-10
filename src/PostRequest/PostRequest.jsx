@@ -1,9 +1,10 @@
-import "./Postadd.css";
+import "./PostRequest.css";
 import React from "react";
 
 function template() {
   return (
-    <div className="postadd">
+    <div className="post-request">
+      
       {/* <!-- Start Content --> */}
     <div id="content" class="section-padding">
       <div class="container">
@@ -37,7 +38,7 @@ function template() {
                     <li>
                       <a href="account-myads.html">
                         <i class="lni-layers"></i>
-                        <span>My Ads</span>
+                        <span>My Requests</span>
                       </a>
                     </li>
                     <li>
@@ -86,9 +87,9 @@ function template() {
             <div >
             <form class="row page-content" action="" method="post" onSubmit={this.checkInputs}>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                <div class="inner-box">
+                <div class="inner-box-r">
                   <div class="dashboard-box">
-                    <h2 class="dashbord-title">Ad Detail</h2>
+                    <h2 class="dashbord-title">Request Detail</h2>
                   </div>
                   
                   <div class="dashboard-wrapper">
@@ -140,7 +141,7 @@ function template() {
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
-                <div class="inner-box">
+                <div class="inner-box-r">
                   <div class="tg-contactdetail">
                     <div class="dashboard-box">
                       <h2 class="dashbord-title">Contact Detail</h2>
@@ -229,7 +230,7 @@ function template() {
                         <input id="tg-agreetermsandrules" type="checkbox" name="agreetermsandrules" value="on" />
                         <label for="tg-agreetermsandrules">I agree to all <a href="javascript:void(0);">Terms of Use &amp; Posting Rules</a></label>
                       </div>
-                      <button class="btn btn-common" type="submit">Post Ad</button>
+                      <button class="btn btn-common" type="submit">Post Request</button>
                     </div>
                     <div className="flex progressContainer">
                       <p id="size" className="f3">0</p>
@@ -250,6 +251,7 @@ function template() {
       </div>      
     </div>
     {/* <!-- End Content --> */}
+    
     </div>
   );
 };
