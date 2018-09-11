@@ -49,12 +49,12 @@ function template() {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
                 
-                  <Link className="nav-link" to="Home">Home</Link>
+                  <Link className="nav-link" to="../Home">Home</Link>
                 
               </li>
               <li className="nav-item">
                 
-                  <Link className="nav-link" to="Category">Categories</Link>                  
+                  <Link className="nav-link" to="../Category">Categories</Link>                  
                 
               </li>
               <li className="nav-item dropdown">
@@ -62,8 +62,8 @@ function template() {
                   Request
                 </a>
                 <div className="dropdown-menu">
-                  <Link className="dropdown-item" to="Requests">See All</Link>
-                  <Link className="dropdown-item" to="post-request">Post a Request</Link>                  
+                  <Link className="dropdown-item" to="/Requests">See All</Link>
+                  <Link className="dropdown-item" to="../post-request">Post a Request</Link>                  
                 </div>
                   
                 
@@ -73,8 +73,8 @@ function template() {
                   Ads and Products
                 </a>
                 <div className="dropdown-menu">
-                  <Link className="dropdown-item" to="Products">See All</Link>
-                  <Link className="dropdown-item" to="post-ads">Post a Add or Product</Link>                  
+                  <Link className="dropdown-item" to="../Products">See All</Link>
+                  <Link className="dropdown-item" to="../post-ads">Post a Add or Product</Link>                  
                 </div>
                   
                 
@@ -98,10 +98,10 @@ function template() {
                 </div>
               </li>
             </ul>
-            <Link className="tg-btn" to="post-ads">
+            <Link className="tg-btn" to="../post-ads">
               <i className="lni-pencil-alt"></i> Post An Ad
             </Link>
-            <Link className="tg-btn" to="post-request">
+            <Link className="tg-btn" to="../post-request">
               <i className="lni-pencil-alt"></i> Post A Request
             </Link>
           </div>

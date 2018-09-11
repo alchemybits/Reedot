@@ -68,14 +68,16 @@ export function getThumbnails(){
 
 }
 
-export function getProductos(cat,subcat,queryText){
+export function getProductos(cat,location,queryText){
 	console.log("THIS IS THE QUERY",queryText);
+	console.log({cat,location});
 	return dispatch => { 
 		//console.log("dispatching...");
 		// let queryText = "c";
 		try {
 			featuredProductos.orderByChild("nombre").startAt(queryText)
 		.endAt(queryText+"\uf8ff").on('value', data => {
+
 			if(!data.val())
 			dispatch({
 				type: FETCH_PRODUCTOS,
@@ -83,13 +85,18 @@ export function getProductos(cat,subcat,queryText){
 			})
 			else{
 				let productos = Object.values(data.val());
+				console.log("we here boiz",productos);
+				console.log("ths is cat",cat);
+				console.log("ths is location",location);
 				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
-				if(!cat)
+				if(!cat && !location)
 					obj = productos;
-				if(cat)
+				if(cat && !location)
 					obj = _.filter( productos, { 'categoria': cat });
-				if(cat && subcat)
-					obj = _.filter( productos, { 'categoria': cat, 'subcategoria':subcat });
+				if(location && !cat)
+					obj = _.filter( productos, { 'country':location });
+				if(cat && location)
+					obj = _.filter( productos, { 'categoria': cat, 'country':location });
 
 				
 
@@ -111,7 +118,7 @@ export function getProductos(cat,subcat,queryText){
 }
 
 
-export function getRequests(cat,subcat,queryText){
+export function getRequests(cat,location,queryText){
 	console.log("THIS IS THE REQUEST QUERY",queryText);
 	return dispatch => { 
 		//console.log("dispatching...");
@@ -127,12 +134,14 @@ export function getRequests(cat,subcat,queryText){
 			else{
 				let productos = Object.values(data.val());
 				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
-				if(!cat)
+				if(!cat && !location)
 					obj = productos;
-				if(cat)
+				if(cat && !location)
 					obj = _.filter( productos, { 'categoria': cat });
-				if(cat && subcat)
-					obj = _.filter( productos, { 'categoria': cat, 'subcategoria':subcat });
+				if(location && !cat)
+					obj = _.filter( productos, { 'country':location });
+				if(cat && location)
+					obj = _.filter( productos, { 'categoria': cat, 'country':location });
 
 				
 

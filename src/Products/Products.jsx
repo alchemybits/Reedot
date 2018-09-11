@@ -10,7 +10,7 @@ function template() {
  <div class="main-container section-padding">
       <div class="container">
         <div class="row">
-        <input type="text" class="form-control" autocomplete="off" name="s" placeholder="Search...bbbb" id="search-inputSMALbbbbL" value="" />
+        
           <div class="col-lg-3 col-md-12 col-xs-12 page-sidebar">
             <aside>
               

@@ -22,7 +22,12 @@ class Herosection extends React.Component {
       collection: []
     };
 
-    this.ssearchQueryearch = this.searchQuery.bind(this);
+    this.searchQuery = this.searchQuery.bind(this);
+    this.goto = this.goto.bind(this);
+  }
+
+  componentDidMount(){
+    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,25 +38,49 @@ class Herosection extends React.Component {
     this.props.getProductos();
   }
 
+  goto(e){
+    e.preventDefault();
+    let catval = this.cat.value;
+    let locval = this.location.value;
+    let query = "";
+    if(document.getElementById("the-input").value)
+      query = document.getElementById("the-input").value;
+
+      this.props.history.push('/products/?cat='+catval+'&loc='+locval+'&q='+query);
+
+
+  }
+
   searchQuery(e){
     e.preventDefault();
+    let catval = this.cat.value;
+    let locval = this.location.value;
+    
 
-    console.log("goona searchbar-input");
+    console.log({catval,locval});
 
     const cat = this.props.match.params.cat;
-    const subcat = this.props.match.params.subcat;
-    this.props.getProductos(cat,subcat,document.getElementById("the-input").value);
-    this.props.getRequests(cat,subcat,document.getElementById("the-input").value);
+    const location = this.props.match.params.location;
+    this.props.getProductos(this.cat.value,this.location.value,document.getElementById("the-input").value);
+    this.props.getRequests(this.cat.value,this.location.value,document.getElementById("the-input").value);
   }
 
   render() {
     const { match, location, history } = this.props;
+    console.log(location.pathname.split('/')[1].toLowerCase());
     
     this.mainTitle = () =>{
-      if(location.pathname.toLowerCase() == '/requests' || location.pathname.toLowerCase() == '/products')
+
+      if(location.pathname.split('/')[1].toLowerCase() == 'requests' || location.pathname.split('/')[1].toLowerCase() == 'products')
         return (
           <div className="contentBlock">
+
+            <br />
+            <br />
+
+
             <div className="search-bar">
+
               <fieldset>
                 <form className="search-form" onSubmit={this.searchQuery.bind(this)}>
                   <div className="form-group tg-inputwithicon">
@@ -61,33 +90,33 @@ class Herosection extends React.Component {
                   <div className="form-group tg-inputwithicon">
                     <i className="lni-map-marker"></i>
                     <div className="tg-select">
-                      <select>
-                        <option value="none">All Locations</option>
-                        <option value="none">New York</option>
-                        <option value="none">California</option>
-                        <option value="none">Washington</option>
-                        <option value="none">Birmingham</option>
-                        <option value="none">Chicago</option>
-                        <option value="none">Phoenix</option>
+                      <select ref={el => this.location = el}>
+                        <option value="">All Locations</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Canada">Canada</option>
+                        <option value="">Washington</option>
+                        <option value="">Birmingham</option>
+                        <option value="">Chicago</option>
+                        <option value="">Phoenix</option>
                       </select>
                     </div>
                   </div>
                   <div className="form-group tg-inputwithicon">
                     <i className="lni-layers"></i>
                     <div className="tg-select">
-                      <select>
-                        <option value="none">Select Categories</option>
-                        <option value="none">Mobiles</option>
-                        <option value="none">Electronics</option>
-                        <option value="none">Training</option>
-                        <option value="none">Real Estate</option>
-                        <option value="none">Services</option>
-                        <option value="none">Training</option>
-                        <option value="none">Vehicles</option>
+                      <select ref={el => this.cat = el}>
+                        <option value="">Select Categories</option>
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Training">Training</option>
+                        <option value="RealEstate">Real Estate</option>
+                        <option value="Services">Services</option>
+                        <option value="Training">Training</option>
+                        <option value="Vehicles">Vehicles</option>
                       </select>
                     </div>
                   </div>
-                  <button className="btn btn-common" type="button"><i className="lni-search"></i></button>
+                  <button className="btn btn-common" type="submit"><i className="lni-search"></i></button>
                 </form>
               </fieldset>
             </div>
@@ -99,41 +128,41 @@ class Herosection extends React.Component {
         <p>Buy And Sell Everything From Used Cars To Mobile Phones And Computers, <br /> Or Search For Property, Jobs And More</p>
         <div className="search-bar">
           <fieldset>
-            <form className="search-form">
+            <form className="search-form" onSubmit={this.goto}>
               <div className="form-group tg-inputwithicon">
                 <i className="lni-tag"></i>
-                <input type="text" name="customword" className="form-control" placeholder="What are you looking for" />
-              </div>
-              <div className="form-group tg-inputwithicon">
-                <i className="lni-map-marker"></i>
-                <div className="tg-select">
-                  <select>
-                    <option value="none">All Locations</option>
-                    <option value="none">New York</option>
-                    <option value="none">California</option>
-                    <option value="none">Washington</option>
-                    <option value="none">Birmingham</option>
-                    <option value="none">Chicago</option>
-                    <option value="none">Phoenix</option>
-                  </select>
+                <input type="text" name="customword" className="form-control" placeholder="What are you looking for" id="the-input" />
+                  </div>
+                  <div className="form-group tg-inputwithicon">
+                    <i className="lni-map-marker"></i>
+                    <div className="tg-select">
+                      <select ref={el => this.location = el}>
+                        <option value="">All Locations</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Canada">Canada</option>
+                        <option value="">Washington</option>
+                        <option value="">Birmingham</option>
+                        <option value="">Chicago</option>
+                        <option value="">Phoenix</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="form-group tg-inputwithicon">
+                    <i className="lni-layers"></i>
+                    <div className="tg-select">
+                      <select ref={el => this.cat = el}>
+                        <option value="">Select Categories</option>
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Training">Training</option>
+                        <option value="RealEstate">Real Estate</option>
+                        <option value="Services">Services</option>
+                        <option value="Training">Training</option>
+                        <option value="Vehicles">Vehicles</option>
+                      </select>
                 </div>
               </div>
-              <div className="form-group tg-inputwithicon">
-                <i className="lni-layers"></i>
-                <div className="tg-select">
-                  <select>
-                    <option value="none">Select Categories</option>
-                    <option value="none">Mobiles</option>
-                    <option value="none">Electronics</option>
-                    <option value="none">Training</option>
-                    <option value="none">Real Estate</option>
-                    <option value="none">Services</option>
-                    <option value="none">Training</option>
-                    <option value="none">Vehicles</option>
-                  </select>
-                </div>
-              </div>
-              <button className="btn btn-common" type="button"><i className="lni-search"></i></button>
+              <button className="btn btn-common" type="submit"><i className="lni-search"></i></button>
             </form>
           </fieldset>
         </div>
@@ -142,26 +171,9 @@ class Herosection extends React.Component {
 
     }
 
-    if( location.pathname.toLowerCase() == '/Home'.toLowerCase() || location.pathname.toLowerCase() == '/Requests'.toLowerCase() || location.pathname.toLowerCase() == '/products'.toLowerCase() || location.pathname.toLowerCase() == '/App'.toLowerCase() )
+   
       return template.call(this);
-    else
-      return (
-        <div class="page-header" style={{background:'url(assets/img/banner1.jpg)'}}>
-      <div class="container">
-        <div class="row">         
-          <div class="col-md-12">
-            <div class="breadcrumb-wrapper">
-              <h2 class="product-title"> {location.pathname}</h2>
-              <ol class="breadcrumb">
-                <li><a href="index.html">Home </a></li>
-                <li class="current">{location.pathname}</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      )
+    
   }
 }
 

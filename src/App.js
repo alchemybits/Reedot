@@ -1,3 +1,13 @@
+import "./assets/assets/css/bootstrap.min.css";
+import "./assets/assets/css/animate.css";
+import "./assets/assets/fonts/line-icons.css";
+import "./assets/assets/css/slicknav.css";
+import "./assets/assets/css/nivo-lightbox.css";
+import "./assets/assets/css/animate.css";
+import "./assets/assets/css/owl.carousel.css";
+import "./assets/assets/css/main.css";
+import "./assets/assets/css/responsive.css";
+
 import React from 'react';
 import * as firebase from 'firebase';
 import Login from './Login/Login';
@@ -12,6 +22,8 @@ import Postadd from "./Postadd/Postadd";
 import Request from "./Request/Request";
 import Products from "./Products/Products";
 import PostRequest from "./PostRequest/PostRequest";
+
+
 
 import { connect } from 'react-redux';
 
@@ -108,9 +120,9 @@ class App extends React.Component {
             
             <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
 
-            <Route path = "/requests/:cat/:subcat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
-            <Route path = "/requests/:cat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
-            <Route path = "/requests" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/Requests/:cat/:location" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/Requests/:cat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/Requests" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
 
             <Route path = "/products/:cat/:subcat" render = {routeProps => <Products {...routeProps} addItem={this.addItem} />}/>
             <Route path = "/products/:cat" render = {routeProps => <Products {...routeProps} addItem={this.addItem} />}/>
