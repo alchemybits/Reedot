@@ -10,6 +10,7 @@ import MenuBar from "./menuBar/menuBar";
 import Herosection from "./Herosection/Herosection";
 import Postadd from "./Postadd/Postadd";
 import Request from "./Request/Request";
+import Products from "./Products/Products";
 import PostRequest from "./PostRequest/PostRequest";
 
 import { connect } from 'react-redux';
@@ -110,6 +111,10 @@ class App extends React.Component {
             <Route path = "/requests/:cat/:subcat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
             <Route path = "/requests/:cat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
             <Route path = "/requests" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
+
+            <Route path = "/products/:cat/:subcat" render = {routeProps => <Products {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/products/:cat" render = {routeProps => <Products {...routeProps} addItem={this.addItem} />}/>
+            <Route path = "/products" render = {routeProps => <Products {...routeProps} addItem={this.addItem} />}/>
 
             {/* <PublicRoute authed={this.state.authed} user={this.state.user} path='/requests' component={Request} />             */}
             <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-request' component={PostRequest} />            

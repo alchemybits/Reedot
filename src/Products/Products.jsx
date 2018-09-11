@@ -1,10 +1,10 @@
-import "./Request.css";
+import "./Products.css";
 import React from "react";
 import _ from 'lodash';
 import LazyImage from "../LazyImage/LazyImage";
 
 function template() {
-  console.log("THIS IS THE STATE",this.state.requests);
+  console.log("THIS IS THE STATE",this.state.productos);
   return (
     
  <div class="main-container section-padding">
@@ -108,7 +108,7 @@ function template() {
                 <div id="grid-view" class="tab-pane fade">
                   <div class="row">
                     
-                    { _.map(this.props.requests, (producto, key) => {
+                    { _.map(this.props.productos, (producto, key) => {
 			        
                   if(producto.sorry)
                     return (<h1>{producto.sorry}</h1>);
@@ -162,7 +162,7 @@ function template() {
                 </div>
                 <div id="list-view" class="tab-pane fade active show">
                   <div class="row">
-                  { _.map(this.props.requests, (producto, key) => {
+                  { _.map(this.props.productos, (producto, key) => {
 			        if(producto.sorry)
                     return (<h1>{producto.sorry}</h1>);
                   else
@@ -240,3 +240,4 @@ function template() {
 };
 
 export default template;
+

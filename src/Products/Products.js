@@ -1,24 +1,23 @@
 import React    from "react";
-import template from "./Request.jsx";
+import template from "./Products.jsx";
 import { connect } from 'react-redux';
-import { getRequests,getThumbnails,getFeaturedrequests } from '../Actions/Actions';
+import { getProductos,getThumbnails,getFeaturedProductos } from '../Actions/Actions';
 
 
 
 function mapStateToProps(state) {
   //console.log("state in props from PRODUCTS =>",state);
   return {
-    requests: state.requests
+    productos: state.productos
   };
 }
 
-
-class Request extends React.Component {
-  constructor(){
+class Products extends React.Component {
+	constructor(){
     super();
     
     this.state = {
-      requests: ["0"],
+      productos: ["0"],
       collection: []
     };
 
@@ -54,11 +53,11 @@ class Request extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ requests: nextProps.requests });  
+    this.setState({ productos: nextProps.productos });  
   }
 
   componentWillMount() {
-    this.props.getRequests();
+    this.props.getProductos();
   }
 
   searchQuery(e){
@@ -68,12 +67,11 @@ class Request extends React.Component {
 
     const cat = this.props.match.params.cat;
     const subcat = this.props.match.params.subcat;
-    this.props.getRequests(cat,subcat,document.getElementById("search-inputSMALL").value);
+    this.props.getProductos(cat,subcat,document.getElementById("search-inputSMALL").value);
   }
-
   render() {
     return template.call(this);
   }
 }
 
-export default connect(mapStateToProps,{ getRequests })(Request);
+export default connect(mapStateToProps,{ getProductos })(Products);

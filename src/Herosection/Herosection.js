@@ -1,8 +1,49 @@
 import React    from "react";
 import template from "./Herosection.jsx";
 import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
+import { getProductos,getThumbnails,getFeaturedProductos,getRequests } from '../Actions/Actions';
+
+
+
+function mapStateToProps(state) {
+  //console.log("state in props from PRODUCTS =>",state);
+  return {
+    productos: state.productos
+  };
+}
 
 class Herosection extends React.Component {
+  constructor(){
+    super();
+    
+    this.state = {
+      productos: ["0"],
+      collection: []
+    };
+
+    this.ssearchQueryearch = this.searchQuery.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ productos: nextProps.productos });  
+  }
+
+  componentWillMount() {
+    this.props.getProductos();
+  }
+
+  searchQuery(e){
+    e.preventDefault();
+
+    console.log("goona searchbar-input");
+
+    const cat = this.props.match.params.cat;
+    const subcat = this.props.match.params.subcat;
+    this.props.getProductos(cat,subcat,document.getElementById("the-input").value);
+    this.props.getRequests(cat,subcat,document.getElementById("the-input").value);
+  }
+
   render() {
     const { match, location, history } = this.props;
     
@@ -12,10 +53,10 @@ class Herosection extends React.Component {
           <div className="contentBlock">
             <div className="search-bar">
               <fieldset>
-                <form className="search-form">
+                <form className="search-form" onSubmit={this.searchQuery.bind(this)}>
                   <div className="form-group tg-inputwithicon">
                     <i className="lni-tag"></i>
-                    <input type="text" name="customword" className="form-control" placeholder="What are you looking for" />
+                    <input type="text" name="customword" className="form-control" placeholder="What are you looking for" id="the-input" />
                   </div>
                   <div className="form-group tg-inputwithicon">
                     <i className="lni-map-marker"></i>
@@ -124,4 +165,4 @@ class Herosection extends React.Component {
   }
 }
 
-export default withRouter(Herosection);
+export default withRouter(connect(mapStateToProps,{ getProductos,getRequests })(Herosection));

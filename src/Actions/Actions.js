@@ -1,8 +1,9 @@
-import { productos,database,featuredProductos,thumbnails,Users,Carts } from '../Firebase';
+import { productos,database,featuredProductos,thumbnails,Users,Carts,requests } from '../Firebase';
 import _  from 'lodash';
 import * as firebase from "firebase";
 
 export const FETCH_PRODUCTOS = 'fetch_productos';
+export const FETCH_REQUESTS = 'fetch_requests';
 export const FETCH_THUMBNAILS = "fetch_thumbnails";
 export const FETCH_USER = "fetch_user"
 export const FETCH_CART = "fetch_cart"
@@ -95,6 +96,49 @@ export function getProductos(cat,subcat,queryText){
 				console.log("NEW OBJ", obj );
 				dispatch({
 					type: FETCH_PRODUCTOS,
+					payload: obj
+				})
+			}
+			
+		})
+			
+		} catch (error) {
+			
+			
+		}
+		
+	}
+}
+
+
+export function getRequests(cat,subcat,queryText){
+	console.log("THIS IS THE REQUEST QUERY",queryText);
+	return dispatch => { 
+		//console.log("dispatching...");
+		// let queryText = "c";
+		try {
+			requests.orderByChild("nombre").startAt(queryText)
+		.endAt(queryText+"\uf8ff").on('value', data => {
+			if(!data.val())
+			dispatch({
+				type: FETCH_REQUESTS,
+				payload: {918282918:{sorry:"No values found...",url:"#"}}
+			})
+			else{
+				let productos = Object.values(data.val());
+				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
+				if(!cat)
+					obj = productos;
+				if(cat)
+					obj = _.filter( productos, { 'categoria': cat });
+				if(cat && subcat)
+					obj = _.filter( productos, { 'categoria': cat, 'subcategoria':subcat });
+
+				
+
+				console.log("NEW REQUEST", obj );
+				dispatch({
+					type: FETCH_REQUESTS,
 					payload: obj
 				})
 			}
