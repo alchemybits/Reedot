@@ -5,8 +5,9 @@ import * as firebase from "firebase";
 export const FETCH_PRODUCTOS = 'fetch_productos';
 export const FETCH_REQUESTS = 'fetch_requests';
 export const FETCH_THUMBNAILS = "fetch_thumbnails";
-export const FETCH_USER = "fetch_user"
-export const FETCH_CART = "fetch_cart"
+export const FETCH_USER = "fetch_user";
+export const FETCH_CART = "fetch_cart";
+export const FETCH_PRODUCTO_ID = "fetch_producto_id";
 
 
 export function getPartidos(){
@@ -77,17 +78,21 @@ export function getProductos(cat,location,queryText){
 		try {
 			featuredProductos.orderByChild("nombre").startAt(queryText)
 		.endAt(queryText+"\uf8ff").on('value', data => {
-
-			if(!data.val())
+			console.log("DATDATDTATDTATDTADTADTADTD",data.val());
+			if(!data.val()) 
 			dispatch({
 				type: FETCH_PRODUCTOS,
 				payload: {918282918:{sorry:"No values found...",url:"#"}}
 			})
 			else{
 				let productos = Object.values(data.val());
-				console.log("we here boiz",productos);
-				console.log("ths is cat",cat);
-				console.log("ths is location",location);
+				let keys = Object.keys(data.val());
+
+				productos.forEach((item,index) => {
+					item.key = keys[index];
+					
+				});
+				
 				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
 				if(!cat && !location)
 					obj = productos;
@@ -159,6 +164,27 @@ export function getRequests(cat,location,queryText){
 			
 		}
 		
+	}
+}
+
+export function getProductosById(id){
+	console.log(id);
+	
+	return dispatch => { 
+		productos.child(id).on("value", function(snapshot) {
+			console.log(snapshot.val());
+			if(!snapshot.val())
+				dispatch({
+					type: FETCH_PRODUCTO_ID,
+					payload: {sorry:"No values found...",url:"#"}
+				})
+			else{
+				dispatch({
+					type: FETCH_PRODUCTO_ID,
+					payload: snapshot.val()
+				})
+			}
+		})
 	}
 }
 

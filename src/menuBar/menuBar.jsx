@@ -43,38 +43,38 @@ function template() {
               <span className="lni-menu"></span>
               <span className="lni-menu"></span>
             </button>
-            <Link to="Home" className="navbar-brand"><h1>Reedot</h1></Link>
+            <Link to="/Home" className="navbar-brand"><h1>Reedot</h1></Link>
           </div>
           <div className="collapse navbar-collapse" id="main-navbar">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
                 
-                  <Link className="nav-link" to="../Home">Home</Link>
+                  <Link className="nav-link" to="/Home">Home</Link>
                 
               </li>
               <li className="nav-item">
                 
-                  <Link className="nav-link" to="../Category">Categories</Link>                  
+                  <Link className="nav-link" to="/Category">Categories</Link>                  
                 
               </li>
               <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle" to="/Requests" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Request
-                </a>
+                </Link>
                 <div className="dropdown-menu">
                   <Link className="dropdown-item" to="/Requests">See All</Link>
-                  <Link className="dropdown-item" to="../post-request">Post a Request</Link>                  
+                  <Link className="dropdown-item" to="/post-request">Post a Request</Link>                  
                 </div>
                   
                 
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="nav-link dropdown-toggle" to="/Products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Ads and Products
-                </a>
+                </Link>
                 <div className="dropdown-menu">
-                  <Link className="dropdown-item" to="../Products">See All</Link>
-                  <Link className="dropdown-item" to="../post-ads">Post a Add or Product</Link>                  
+                  <Link className="dropdown-item" to="/Products">See All</Link>
+                  <Link className="dropdown-item" to="/post-ads">Post a Add or Product</Link>                  
                 </div>
                   
                 
