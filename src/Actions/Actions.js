@@ -78,7 +78,7 @@ export function getProductos(cat,location,queryText){
 		try {
 			featuredProductos.orderByChild("nombre").startAt(queryText)
 		.endAt(queryText+"\uf8ff").on('value', data => {
-			console.log("DATDATDTATDTATDTADTADTADTD",data.val());
+			
 			if(!data.val()) 
 			dispatch({
 				type: FETCH_PRODUCTOS,
@@ -105,7 +105,7 @@ export function getProductos(cat,location,queryText){
 
 				
 
-				console.log("NEW OBJ", obj );
+				
 				dispatch({
 					type: FETCH_PRODUCTOS,
 					payload: obj
@@ -124,7 +124,7 @@ export function getProductos(cat,location,queryText){
 
 
 export function getRequests(cat,location,queryText){
-	console.log("THIS IS THE REQUEST QUERY",queryText);
+	
 	return dispatch => { 
 		//console.log("dispatching...");
 		// let queryText = "c";
@@ -138,6 +138,13 @@ export function getRequests(cat,location,queryText){
 			})
 			else{
 				let productos = Object.values(data.val());
+				let keys = Object.keys(data.val());
+
+				productos.forEach((item,index) => {
+					item.key = keys[index];
+					
+				});
+
 				let obj = []; //_.filter( productos, { 'categoria': "Flats" });
 				if(!cat && !location)
 					obj = productos;
@@ -150,7 +157,7 @@ export function getRequests(cat,location,queryText){
 
 				
 
-				console.log("NEW REQUEST", obj );
+				
 				dispatch({
 					type: FETCH_REQUESTS,
 					payload: obj
@@ -167,25 +174,47 @@ export function getRequests(cat,location,queryText){
 	}
 }
 
-export function getProductosById(id){
-	console.log(id);
+export function getProductosById(id,type = false){
+	console.log("this is the type",type);
 	
-	return dispatch => { 
-		productos.child(id).on("value", function(snapshot) {
-			console.log(snapshot.val());
-			if(!snapshot.val())
-				dispatch({
-					type: FETCH_PRODUCTO_ID,
-					payload: {sorry:"No values found...",url:"#"}
-				})
-			else{
-				dispatch({
-					type: FETCH_PRODUCTO_ID,
-					payload: snapshot.val()
-				})
-			}
-		})
+	if(type){
+		return dispatch => { 
+			requests.child(id).on("value", function(snapshot) {
+				
+				if(!snapshot.val())
+					dispatch({
+						type: FETCH_PRODUCTO_ID,
+						payload: {sorry:"No values found...",url:"#"}
+					})
+				else{
+					dispatch({
+						type: FETCH_PRODUCTO_ID,
+						payload: snapshot.val()
+					})
+				}
+			})
+		}
+
 	}
+	else{
+		return dispatch => { 
+			productos.child(id).on("value", function(snapshot) {
+				
+				if(!snapshot.val())
+					dispatch({
+						type: FETCH_PRODUCTO_ID,
+						payload: {sorry:"No values found...",url:"#"}
+					})
+				else{
+					dispatch({
+						type: FETCH_PRODUCTO_ID,
+						payload: snapshot.val()
+					})
+				}
+			})
+		}
+	}
+	
 }
 
 export function getFeaturedProductos(){

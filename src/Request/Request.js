@@ -22,7 +22,7 @@ class Request extends React.Component {
       collection: []
     };
 
-    this.ssearchQueryearch = this.searchQuery.bind(this);
+    this.searchQuery = this.searchQuery.bind(this);
   }
 
   
@@ -50,7 +50,7 @@ class Request extends React.Component {
   }  
 
   componentDidMount(){
-    
+    this.searchQuery();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -62,13 +62,35 @@ class Request extends React.Component {
   }
 
   searchQuery(e){
-    e.preventDefault();
+    if(e)
+      e.preventDefault();
+    //console.log('[][][][][][][][][][[||||||||||||||',this.props.match.params.cat);
+    if(this.props.match.params.cat === undefined)
+      if(this.props.location.search){
+        let arr,cat,loc,q;
+        arr = this.props.location.search.split("&");
 
-    console.log("goona searchbar-input");
+        arr.forEach((item,index) => {
+          let type,str ;
+          type = item.split("=")[0];
+          str = item.split("=")[1];
+          switch(type){
+            case "?cat" : {cat = str; break;}
+            case "loc" : {loc = str; break;}
+            case "q" : {q = str; break;}
+          }
+        })
+        //console.log("SEARCH ######################",{cat,loc,q});
+        this.props.getRequests(cat,loc,q);
+      }
+      
+    else{
+      const cat = this.props.match.params.cat;
+      const subcat = this.props.match.params.location;
+      this.props.getRequests(cat,subcat,"");
 
-    const cat = this.props.match.params.cat;
-    const subcat = this.props.match.params.subcat;
-    this.props.getRequests(cat,subcat,document.getElementById("search-inputSMALL").value);
+    }    
+    
   }
 
   render() {

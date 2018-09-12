@@ -23,6 +23,7 @@ import Request from "./Request/Request";
 import Products from "./Products/Products";
 import PostRequest from "./PostRequest/PostRequest";
 import AddDetails from "./AddDetails/AddDetails";
+import RequestDetail from "./RequestDetail/RequestDetail";
 
 
 
@@ -122,6 +123,7 @@ class App extends React.Component {
             
             <PrivateRoute authed={this.state.authed} user={this.state.user} path='/post-ads' component={Postadd} />
             <Route path = "/AddDetails/:add" render = {routeProps => <AddDetails {...routeProps} />}/>
+            <Route path = "/RequestDetail/:add" render = {routeProps => <RequestDetail {...routeProps} />}/>
 
             <Route path = "/Requests/:cat/:location" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>
             <Route path = "/Requests/:cat" render = {routeProps => <Request {...routeProps} addItem={this.addItem} />}/>

@@ -7,8 +7,8 @@ function guest(func){
 	// const add = (path == "/Collection" || path == "/collection" )?"":<span><i className="material-icons" ><Link to="/Collection">search</Link></i></span>;
 	return (
 		<div className="">
-    <div className="dropdown-item"><i className="lni-lock"></i><Link to="login"> Log In</Link></div>
-    <div className="dropdown-item"><i className="lni-user"></i><Link to="signup"> Signup</Link></div>
+    <div className="dropdown-item"><i className="lni-lock"></i><Link to="/login"> Log In</Link></div>
+    <div className="dropdown-item"><i className="lni-user"></i><Link to="/signup"> Signup</Link></div>
 		
 			
 		</div>

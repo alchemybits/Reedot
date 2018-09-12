@@ -2,14 +2,18 @@ import "./Products.css";
 import React from "react";
 import _ from 'lodash';
 import LazyImage from "../LazyImage/LazyImage";
+import PlaceholderComponent from "../PlaceholderComponent/PlaceholderComponent";
+import LazyLoad from 'react-lazyload';
+
 import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 function template() {
-  console.log("THIS IS THE STATE",this.state.productos);
+  
   return (
     
  <div className="main-container section-padding">
       <div className="container">
+      <h1>PRODUCTS</h1>
         <div className="row">
         
           <div className="col-lg-3 col-md-12 col-xs-12 page-sidebar">
@@ -121,7 +125,11 @@ function template() {
 			                          <div className="icon">
 			                            <i className="lni-heart"></i>
 			                          </div>
-			                          <a href="#"><LazyImage className="img-fluid" unloadedSrc="../assets/images/clear.png" src={producto.url} ></ LazyImage></a>
+			                          <a href="#">
+                                 <LazyLoad height={200} offset={100} placeholder={<PlaceholderComponent />}>                                  
+                                    <img className="img-fluid"  src={producto.url} />
+                                  </LazyLoad>   
+                                </a>
 			                        </figure>
 			                        <div className="feature-content">
 			                          <div className="tg-product">
@@ -145,7 +153,7 @@ function template() {
 			                          </ul>
 			                          <div className="btn-list">
 			                            <span className="btn-price" href="#">$ {producto.precio} / Per Hour</span>
-			                            <Link to={"/AddDetails/"+key} className="btn btn-common" >
+			                            <Link to={"/AddDetails/"+producto.key} className="btn btn-common" >
 			                              <i className="lni-list"></i>
 			                              View Details
 			                            </Link>
@@ -174,7 +182,12 @@ function template() {
 			                          <div className="icon">
 			                            <i className="lni-heart"></i>
 			                          </div>
-			                          <a href="#"><LazyImage className="img-fluid" unloadedSrc="../assets/images/loading.gif" src={producto.url} ></ LazyImage></a>
+			                          <a href="#">
+                                <LazyLoad height={200} offset={100} placeholder={<PlaceholderComponent />}>                                  
+                                  <img className="img-fluid"  src={producto.url} />
+                                </LazyLoad>
+
+                                </a>
 			                        </figure>
 			                        <div className="feature-content">
 			                          <div className="tg-product">

@@ -18,7 +18,7 @@ let initialState = {
 
 const store = createStoreWithMiddleware(reducers);
 
-console.log("========>",initialState);
+
 // function reducer(state = initialState, action) {
 
 

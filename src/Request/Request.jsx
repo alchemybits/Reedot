@@ -1,14 +1,19 @@
 import "./Request.css";
 import React from "react";
 import _ from 'lodash';
-import LazyImage from "../LazyImage/LazyImage";
+import PlaceholderComponent from "../PlaceholderComponent/PlaceholderComponent";
+import LazyLoad from 'react-lazyload';
+
+import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 function template() {
-  console.log("THIS IS THE STATE",this.state.requests);
+  
   return (
     
  <div class="main-container section-padding">
+
       <div class="container">
+      <h1>REQUESTS</h1>
         <div class="row">
         
           <div class="col-lg-3 col-md-12 col-xs-12 page-sidebar">
@@ -120,7 +125,11 @@ function template() {
 			                          <div class="icon">
 			                            <i class="lni-heart"></i>
 			                          </div>
-			                          <a href="#"><LazyImage className="img-fluid" unloadedSrc="../assets/images/clear.png" src={producto.url} ></ LazyImage></a>
+			                          <a href="#">
+                                    <LazyLoad height={200} offset={100} placeholder={<PlaceholderComponent />}>
+                                      <img className="img-fluid"  src={producto.url} />
+                                    </LazyLoad>   
+                                </a>
 			                        </figure>
 			                        <div class="feature-content">
 			                          <div class="tg-product">
@@ -144,10 +153,10 @@ function template() {
 			                          </ul>
 			                          <div class="btn-list">
 			                            <a class="btn-price" href="#">$ {producto.precio} / Per Hour</a>
-			                            <a class="btn btn-common" href="ads-details.html">
+			                            <Link to={"/RequestDetail/"+producto.key} className="btn btn-common" >
 			                              <i class="lni-list"></i>
 			                              View Details
-			                            </a>
+			                            </Link>
 			                          </div>
 			                        </div>
 			                      </div>
@@ -173,7 +182,11 @@ function template() {
 			                          <div class="icon">
 			                            <i class="lni-heart"></i>
 			                          </div>
-			                          <a href="#"><LazyImage className="img-fluid" unloadedSrc="../assets/images/clear.png" src={producto.url} ></ LazyImage></a>
+			                          <a href="#">
+                                  <LazyLoad height={200} offset={100} placeholder={<PlaceholderComponent />}>                                  
+                                    <img className="img-fluid"  src={producto.url} />
+                                  </LazyLoad>   
+                                </a>
 			                        </figure>
 			                        <div class="feature-content">
 			                          <div class="tg-product">
@@ -197,10 +210,10 @@ function template() {
 			                          </ul>
 			                          <div class="btn-list">
 			                            <a class="btn-price" href="#">$ {producto.precio} / Per Hour</a>
-			                            <a class="btn btn-common" href="ads-details.html">
+			                            <Link to={"/RequestDetail/"+producto.key} className="btn btn-common" >
 			                              <i class="lni-list"></i>
 			                              View Details
-			                            </a>
+			                            </Link>
 			                          </div>
 			                        </div>
 			                      </div>

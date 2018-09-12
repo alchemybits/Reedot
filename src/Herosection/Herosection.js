@@ -46,7 +46,12 @@ class Herosection extends React.Component {
     if(document.getElementById("the-input").value)
       query = document.getElementById("the-input").value;
 
+    if(this.prod.checked)
       this.props.history.push('/products/?cat='+catval+'&loc='+locval+'&q='+query);
+    else
+      this.props.history.push('/requests/?cat='+catval+'&loc='+locval+'&q='+query);
+
+      
 
 
   }
@@ -57,7 +62,7 @@ class Herosection extends React.Component {
     let locval = this.location.value;
     
 
-    console.log({catval,locval});
+    
 
     const cat = this.props.match.params.cat;
     const location = this.props.match.params.location;
@@ -67,7 +72,7 @@ class Herosection extends React.Component {
 
   render() {
     const { match, location, history } = this.props;
-    console.log(location.pathname.split('/')[1].toLowerCase());
+    
     
     this.mainTitle = () =>{
 
@@ -122,10 +127,40 @@ class Herosection extends React.Component {
             </div>
           </div>
         )
-      else
+      else if (location.pathname.split('/')[1].toLowerCase() == 'home' || location.pathname.split('/')[1].toLowerCase() == '' )
         return (<div className="contents">
         <h1 className="head-title">Welcome to <span className="year">Reedot</span></h1>
         <p>Buy And Sell Everything From Used Cars To Mobile Phones And Computers, <br /> Or Search For Property, Jobs And More</p>
+        
+        <div class="form">
+    
+          <form>
+            <fieldset class="form__options">
+              <legend class="form__question">Where to search?
+        </legend>
+              <p class="form__answer"> 
+                <input type="radio" name="match" id="match_1" value="requests" ref={el => this.req = el}  /> 
+                <label for="match_1">
+                  
+                  Requests
+                </label> 
+              </p>
+              
+              <p class="form__answer"> 
+                <input type="radio" name="match" id="match_2" value="products" ref={el => this.prod = el} checked /> 
+                <label for="match_2">
+                  
+                  Products
+                </label> 
+              </p>
+              
+              
+              
+            </fieldset>
+            
+          </form>
+        </div>
+        
         <div className="search-bar">
           <fieldset>
             <form className="search-form" onSubmit={this.goto}>
@@ -162,6 +197,7 @@ class Herosection extends React.Component {
                       </select>
                 </div>
               </div>
+              
               <button className="btn btn-common" type="submit"><i className="lni-search"></i></button>
             </form>
           </fieldset>
