@@ -52,7 +52,7 @@ label {
   display: block;
   height: 100%;
   width: 100%;
-  padding: 10px 10px 30px 10px;
+  padding: 5px;
   cursor: pointer;
   opacity: .5;
   transition: all .5s ease-in-out;

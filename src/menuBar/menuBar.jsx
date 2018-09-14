@@ -26,6 +26,8 @@ function logout(func){
 
 
 
+
+
 function template() {
 
   
@@ -74,7 +76,7 @@ function template() {
                 </Link>
                 <div className="dropdown-menu">
                   <Link className="dropdown-item" to="/Products">See All</Link>
-                  <Link className="dropdown-item" to="/post-ads">Post a Add or Product</Link>                  
+                  <Link className="dropdown-item" to="/post-ads">Post an Ad or Product</Link>                  
                 </div>
                   
                 
@@ -98,12 +100,9 @@ function template() {
                 </div>
               </li>
             </ul>
-            <Link className="tg-btn" to="../post-ads">
-              <i className="lni-pencil-alt"></i> Post An Ad
-            </Link>
-            <Link className="tg-btn" to="../post-request">
-              <i className="lni-pencil-alt"></i> Post A Request
-            </Link>
+            {this.props.islogged? <Link className="tg-btn" to="../post-ads"><i className="lni-pencil-alt"></i> Post An Ad</Link>: <div></div>}
+            {this.props.islogged?<Link className="tg-btn" to="../post-request"><i className="lni-pencil-alt"></i> Post A Request</Link>: <div></div> }
+            
           </div>
         </div>
 

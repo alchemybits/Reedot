@@ -56,14 +56,9 @@ function mapStateToProps(state) {
 }
 
 function PublicRoute ({component: Component, authed, ...rest}) {
+  
+  return authed == false?(<Route {...rest} render={(props) =>  <Component {...props} /> } />  ) : (<Redirect to="/Home" />  );
 
-  return (
-    <Route
-        {...rest}
-      render={(props) =>  <Component {...props} />
-        }
-    />
-  )
 }
 
 
