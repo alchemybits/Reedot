@@ -8,7 +8,7 @@ function template() {
     <div className="add-details">
       <div class="section-padding">
       <div class="container">
-      <h1>ADD/PRODUCT DETAIL</h1>
+      <h1>AD/PRODUCT DETAIL</h1>
         {/* <!-- Product Info Start --> */}
         <div class="product-info row">
           <div class="col-lg-7 col-md-12 col-xs-12">
