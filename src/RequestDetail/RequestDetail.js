@@ -3,6 +3,7 @@ import template from "./RequestDetail.jsx";
 import { Route, Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { getThumbnails,getProductosById } from '../Actions/Actions';
+import { requests } from '../Firebase';
 
 function mapStateToProps(state) {
   //console.log("state in props from PRODUCTS =>",state);
@@ -25,6 +26,18 @@ class RequestDetail extends React.Component {
     this.props.getProductosById(e,true);
   }
 
+  addView(e){
+    let nviews = 0;
+    nviews = this.props.productoDetail.views;
+    
+    nviews = nviews === undefined?0:nviews + 1;
+    
+    if(this.props.productoDetail)
+    requests.child(e).update({
+        views: nviews
+      });
+  }
+
   componentDidMount(){
     this.props.getProductosById("kkolj");
     
@@ -34,6 +47,10 @@ class RequestDetail extends React.Component {
       return <Redirect to="/Products" />;
       
       
+  }
+
+  componentWillUnmount() {
+    this.addView(this.props.match.params.add);
   }
   
   render() {

@@ -127,7 +127,15 @@ class PostRequest extends React.Component {
 		const vaddressb = this.addressb.value;
 		const vcountry = this.country.value;
 		const vstate = this.statep.value;
-		const vcity = this.city.value;
+    const vcity = this.city.value;
+    
+    var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
 
 
 
@@ -166,7 +174,8 @@ class PostRequest extends React.Component {
           country : vcountry,
           state : vstate,
           city: vcity,
-          Negotiable: negotiable
+          Negotiable: negotiable,
+          dateAdded: datetime
           
         });
 

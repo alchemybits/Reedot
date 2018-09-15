@@ -28,12 +28,13 @@ class AddDetails extends React.Component {
   addView(e){
     let nviews = 0;
     nviews = this.props.productoDetail.views;
-    console.log("iniviews",this.props.productoDetail);
+    
     nviews = nviews === undefined?0:nviews + 1;
-    console.log("ddddd",nviews);
-    productos.child(e).update({
-      views: nviews
-    });
+    
+    if(this.props.productoDetail)
+      productos.child(e).update({
+        views: nviews
+      });
   }
 
   componentDidMount(){
@@ -50,17 +51,24 @@ class AddDetails extends React.Component {
       
       
   }
+  componentWillUnmount() {
+    this.addView(this.props.match.params.add);
+  }
 
   componentWillReceiveProps(nprops){
-    console.log(nprops.match.params.add);
-    this.addView(nprops.match.params.add);
+    console.log('COMPONENT RECEVIED A NPROP',nprops.match.params.add);
+    console.log('COMPONENT RECEVIED A PROP',this.props.match.params.add);
+    // if(nprops.match.params.add)
+      // 
   }
   
   render() {
     if(this.props.productoDetail.sorry)
     return <h1>{this.props.productoDetail.sorry}</h1>
-    else
-    return template.call(this);
+    else{      
+      return template.call(this);
+    }
+    
   }
 }
 

@@ -4,6 +4,7 @@ import PlaceholderComponent from "../PlaceholderComponent/PlaceholderComponent";
 import LazyLoad from 'react-lazyload';
 
 function template() {
+  var today = new Date();
   return (
     <div className="add-details">
       <div class="section-padding">
@@ -31,9 +32,9 @@ function template() {
                 <h2>{this.props.productoDetail.nombre}</h2>
                 <p class="mb-2">{this.props.productoDetail.desc}</p>
                 <div class="details-meta">
-                  <span><a href="#"><i class="lni-alarm-clock"></i> 7 Jan, 10:10 pm</a></span>
+                  <span><a href="#"><i class="lni-alarm-clock"></i>{this.props.productoDetail.dateAdded?this.props.productoDetail.dateAdded:today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()}</a></span>
                   <span><a href="#"><i class="lni-map-marker"></i>{this.props.productoDetail.city}</a></span>
-                  <span><a href="#"><i class="lni-eye"></i> 299 View</a></span>
+                  <span><a href="#"><i class="lni-eye"></i> {this.props.productoDetail.views?this.props.productoDetail.views:0}</a></span>
                 </div>
                 {/* <h4 class="title-small mb-3">Specification:</h4>
                 <ul class="list-specification">

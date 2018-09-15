@@ -225,7 +225,7 @@ export function getFeaturedProductos(){
 		// featuredProductos.orderByChild("nombre").startAt(queryText)
 		// .endAt(queryText+"\uf8ff").on('child_added', data => {
 			
-		featuredProductos.limitToFirst(4).on('value', data => {
+		featuredProductos.limitToLast(6).on('value', data => {
 		// const string = JSON.stringify(data.val());
 		
 			dispatch({

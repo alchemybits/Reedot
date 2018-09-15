@@ -10,20 +10,25 @@ import "./Home.css";
 
 import { connect } from 'react-redux';
 
-import { getPartidos } from '../Actions/torneoActions';
+import { getFeaturedProductos } from '../Actions/Actions';
 import { Field, reduxForm, reset } from 'redux-form';
 import MenuBar from "../menuBar/menuBar";
+import LazyLoad from 'react-lazyload';
+
+import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 function mapStateToProps(state) {
   return {
-    torneos: state.torneos
+    productos: state.productos
   };
 }
 
 
 class Home extends React.Component {
 	constructor(){
-		super();
+    super();
+    
+    
 
 		this.increment = this.increment.bind(this);
 	}
@@ -53,7 +58,7 @@ class Home extends React.Component {
 	}
 
 	componentWillMount() {
-		this.props.getPartidos();
+		this.props.getFeaturedProductos();
 	}
 
   render() {
@@ -165,234 +170,55 @@ class Home extends React.Component {
       <div className="container">
         <h1 className="section-title">Latest Products</h1>
         <div className="row">
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img-12.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Furnitures > Office</a>
-                </div>
-                <h4><a href="ads-details.html">Office Furnitures</a></h4>
-                <span>Last Updated: 5 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> New York</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 17 Mar, 8:30 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> David Givens</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> Used</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 1280</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
+        { 
+          
+          _.map(this.props.productos, (producto, key) => {
+            var today = new Date();
+          return (
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
+          <div className="featured-box">
+            <figure>
+              <div className="icon">
+                <i className="lni-heart"></i>
+              </div>
+              <a href="#"><img className="img-fluid" src={producto.url} alt="" /></a>
+            </figure>
+            <div className="feature-content">
+              <div className="tg-product">
+                <a href="#">{producto.cat}</a>
+              </div>
+              <h4><a href="ads-details.html">{producto.nombre}</a></h4>
+              <span>Last Updated: 5 hours ago</span>
+              <ul className="address">
+                <li>
+                  <a href="#"><i className="lni-map-marker"></i>{producto.city}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-alarm-clock"></i> {producto.dateAdded?producto.dateAdded:today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-user"></i> {producto.firstname}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-eye"></i> {producto.views?producto.views:0}</a>
+                </li>
+                
+              </ul>
+              <div className="btn-list">
+                <a className="btn-price" href="#">{producto.precio}</a>
+                <Link to={"/AddDetails/"+key} className="btn btn-common" >
+                  <i class="lni-list"></i>
+			            View Details
+                </Link>
               </div>
             </div>
           </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img2.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Loptop > Accessories</a>
-                </div>
-                <h4><a href="ads-details.html">Fresh Macbook Pro 2017</a></h4>
-                <span>Last Updated: 8 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> New York</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 7 Mar, 10:10 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> John Smith</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> Used</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 1100</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img-11.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Electronics > Naturial</a>
-                </div>
-                <h4><a href="ads-details.html">Canon Photography Camera</a></h4>
-                <span>Last Updated: 4 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> Delaware</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 7 Feb, 6:10 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> Justyna M.</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> Used</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 205</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img1.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Mobiles > Accessories</a>
-                </div>
-                <h4><a href="ads-details.html">Apple iPhone X</a></h4>
-                <span>Last Updated: 13 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> Albama</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 3 Jan, 9:05 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> Mh Arman</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> Brand New</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 799</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img-09.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Loptop > Accessories</a>
-                </div>
-                <h4><a href="ads-details.html">Amazing Room for Rent</a></h4>
-                <span>Last Updated: 4 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> Chicago</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 1 Jan, 7:00 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> Elon Musk</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> N/A</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 250</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-            <div className="featured-box">
-              <figure>
-                <div className="icon">
-                  <i className="lni-heart"></i>
-                </div>
-                <a href="#"><img className="img-fluid" src="assets/img/featured/img-10.jpg" alt="" /></a>
-              </figure>
-              <div className="feature-content">
-                <div className="tg-product">
-                  <a href="#">Office > Stationary</a>
-                </div>
-                <h4><a href="ads-details.html">Custom Notebooks</a></h4>
-                <span>Last Updated: 12 hours ago</span>
-                <ul className="address">
-                  <li>
-                    <a href="#"><i className="lni-map-marker"></i> Washington</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-alarm-clock"></i> 12 Dec, 10:10 pm</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-user"></i> John Smith</a>
-                  </li>
-                  <li>
-                    <a href="#"><i className="lni-package"></i> Brand New</a>
-                  </li>
-                </ul>
-                <div className="btn-list">
-                  <a className="btn-price" href="#">$ 25</a>
-                  <a className="btn btn-common" href="ads-details.html">
-                    <i className="lni-list"></i>
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>);
+
+        }) }
+          
+          
+         
         </div>
       </div>
     </section>
@@ -1109,10 +935,7 @@ class Home extends React.Component {
   }
 }
 
-let form = reduxForm({
-	form: 'NewPost'
-})(Home);
 
-form = connect(mapStateToProps,{ getPartidos })(form);
+// form = connect(mapStateToProps,{ getPartidos })(form);
 
-export default connect(mapStateToProps,{ getPartidos })(Home);;
+export default connect(mapStateToProps,{ getFeaturedProductos })(Home);;
