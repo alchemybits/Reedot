@@ -179,7 +179,7 @@ class Home extends React.Component {
           _.map(this.props.productos, (producto, key) => {
             var today = new Date();
           return (
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
+            <Link to={"/AddDetails/"+key} className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
           <div className="featured-box">
             <figure>
               <div className="icon">
@@ -217,7 +217,9 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-        </div>);
+        
+        </Link>
+        );
 
         }) }
           
@@ -239,7 +241,7 @@ class Home extends React.Component {
                 console.log("LATEST",producto);
                 var today = new Date();
               return (
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
+                <Link to={"/AddDetails/"+key}  className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
           <div className="featured-box">
             <figure>
               <div className="icon">
@@ -277,7 +279,8 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        
+        </Link>
 
                 )}
               )
