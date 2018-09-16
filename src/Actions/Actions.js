@@ -3,6 +3,7 @@ import _  from 'lodash';
 import * as firebase from "firebase";
 
 export const FETCH_PRODUCTOS = 'fetch_productos';
+export const FETCH_PRODUCTOSLATEST = 'fetch_productos_latest';
 export const FETCH_REQUESTS = 'fetch_requests';
 export const FETCH_THUMBNAILS = "fetch_thumbnails";
 export const FETCH_USER = "fetch_user";
@@ -218,18 +219,21 @@ export function getProductosById(id,type = false){
 }
 
 export function getFeaturedProductos(){
-
 	return dispatch => { 
-		//console.log("dispatching...");
-		// let queryText = "c";
-		// featuredProductos.orderByChild("nombre").startAt(queryText)
-		// .endAt(queryText+"\uf8ff").on('child_added', data => {
-			
 		featuredProductos.limitToLast(6).on('value', data => {
-		// const string = JSON.stringify(data.val());
-		
 			dispatch({
 				type: FETCH_PRODUCTOS,
+				payload: data.val()
+			})
+		})
+	}
+}
+
+export function getLatestProductos(){
+	return dispatch => { 
+		featuredProductos.orderByChild('views').limitToLast(6).on('value', data => {
+			dispatch({
+				type: FETCH_PRODUCTOSLATEST,
 				payload: data.val()
 			})
 		})

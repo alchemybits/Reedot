@@ -100,7 +100,7 @@ class App extends React.Component {
       <Router>
         <div>
         <Switch>
-          {/* <!-- Header Area wrapper Starts --> */}
+          
           <div id="header-wrap">
           <MenuBar islogged={this.state.authed} ></MenuBar>
           <Herosection ></Herosection>

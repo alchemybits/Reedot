@@ -132,23 +132,23 @@ class Herosection extends React.Component {
         <h1 className="head-title">Welcome to <span className="year">Reedot</span></h1>
         <p>Buy And Sell Everything From Used Cars To Mobile Phones And Computers, <br /> Or Search For Property, Jobs And More</p>
         
-        <div class="form">
+        <div className="form">
     
           <form>
-            <fieldset class="form__options">
-              <legend class="form__question">Where to search?
+            <fieldset className="form__options">
+              <legend className="form__question">Where to search?
         </legend>
-              <p class="form__answer"> 
+              <p className="form__answer"> 
                 <input type="radio" name="match" id="match_1" value="requests" ref={el => this.req = el}  /> 
-                <label for="match_1">
+                <label htmlFor="match_1">
                   
                   Requests
                 </label> 
               </p>
               
-              <p class="form__answer"> 
-                <input type="radio" name="match" id="match_2" value="products" ref={el => this.prod = el} checked /> 
-                <label for="match_2">
+              <p className="form__answer"> 
+                <input type="radio" name="match" id="match_2" value="products" ref={el => this.prod = el} defaultChecked /> 
+                <label htmlFor="match_2">
                   
                   Products
                 </label> 

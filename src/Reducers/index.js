@@ -6,6 +6,7 @@ import thumbnailReducer from './thumbnailReducer';
 import userReducer from './userReducer';
 import cartReducer from './cartReducer';
 import productoDetailReducer from './productoDetailReducer';
+import productoLatest from './productosLatest';
 
 const rootReducer = combineReducers({
 	form: formReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
 	requests: requestReducer,
 	thumbnails: thumbnailReducer,
 	user: userReducer,
-	cart: cartReducer
+	cart: cartReducer,
+	latest: productoLatest
 });
 
 export default rootReducer;

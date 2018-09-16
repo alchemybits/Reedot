@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 import {} from '../Firebase.js';
 import _ from 'lodash';
 import swal from 'sweetalert2';
+import $ from 'jquery';
+
 
 
 
@@ -10,7 +12,7 @@ import "./Home.css";
 
 import { connect } from 'react-redux';
 
-import { getFeaturedProductos } from '../Actions/Actions';
+import { getFeaturedProductos,getLatestProductos } from '../Actions/Actions';
 import { Field, reduxForm, reset } from 'redux-form';
 import MenuBar from "../menuBar/menuBar";
 import LazyLoad from 'react-lazyload';
@@ -19,7 +21,8 @@ import {  BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-r
 
 function mapStateToProps(state) {
   return {
-    productos: state.productos
+    productos: state.productos,
+    latest: state.latest
   };
 }
 
@@ -58,7 +61,8 @@ class Home extends React.Component {
 	}
 
 	componentWillMount() {
-		this.props.getFeaturedProductos();
+    this.props.getFeaturedProductos();
+    this.props.getLatestProductos();
 	}
 
   render() {
@@ -73,7 +77,7 @@ class Home extends React.Component {
         <h1 className="section-title">Product Categories</h1>
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+            <Link to="/products?cat=Vehicle">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-1.png" alt="" />
@@ -81,10 +85,10 @@ class Home extends React.Component {
                 <h4>Vehicle</h4>
                 <strong>189 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=Laptops">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-2.png" alt="" />
@@ -92,10 +96,10 @@ class Home extends React.Component {
                 <h4>Laptops</h4>
                 <strong>255 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+            <Link to="/products?cat=Mobiles">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-3.png" alt="" />
@@ -103,10 +107,10 @@ class Home extends React.Component {
                 <h4>Mobiles</h4>
                 <strong>127 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=Electronics">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-4.png" alt="" />
@@ -114,10 +118,10 @@ class Home extends React.Component {
                 <h4>Electronics</h4>
                 <strong>69 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=Computer">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-5.png" alt="" />
@@ -125,10 +129,10 @@ class Home extends React.Component {
                 <h4>Computer</h4>
                 <strong>172 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=RealEstate">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-6.png" alt="" />
@@ -136,10 +140,10 @@ class Home extends React.Component {
                 <h4>Real Estate</h4>
                 <strong>150 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=HomeAppliances">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-7.png" alt="" />
@@ -147,10 +151,10 @@ class Home extends React.Component {
                 <h4>Home Appliances</h4>
                 <strong>249 Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <a href="/category">
+          <Link to="/products?cat=Jobs">
               <div className="box">
                 <div className="icon">
                   <img className="img-fluid" src="assets/img/category/img-8.png" alt="" />
@@ -158,7 +162,7 @@ class Home extends React.Component {
                 <h4>Jobs</h4>
                 <strong>14 9Ads</strong>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -207,7 +211,7 @@ class Home extends React.Component {
               <div className="btn-list">
                 <a className="btn-price" href="#">{producto.precio}</a>
                 <Link to={"/AddDetails/"+key} className="btn btn-common" >
-                  <i class="lni-list"></i>
+                  <i className="lni-list"></i>
 			            View Details
                 </Link>
               </div>
@@ -225,305 +229,61 @@ class Home extends React.Component {
     {/* <!-- Featured Section End --> */}
 
     {/* <!-- Featured Listings Start --> */}
-    <section className="featured-lis section-padding" >
+    <section className="featured section-padding">
       <div className="container">
+        <h1 className="section-title">Featured Products</h1>
         <div className="row">
-          <div className="col-md-12 wow fadeIn" data-wow-delay="0.5s">
-            <h3 className="section-title">Featured Products</h3>
-            <div id="new-products" className="owl-carousel">
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img1.jpg" alt="" />  
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 89.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Laptop</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-red"><a href="#">New</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            { 
+              
+              _.map(this.props.latest, (producto, key) => {
+                console.log("LATEST",producto);
+                var today = new Date();
+              return (
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-4" key={key}>
+          <div className="featured-box">
+            <figure>
+              <div className="icon">
+                <i className="lni-heart"></i>
               </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img2.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 89.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Headphones</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <a href="#"><img className="img-fluid" src={producto.url} alt="" /></a>
+            </figure>
+            <div className="feature-content">
+              <div className="tg-product">
+                <a href="#">{producto.cat}</a>
               </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img3.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 49.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Furniture</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-red"><a href="#">New</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img4.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 11.99</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Apple IPhone</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-yellow"><a href="#">Sele</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img5.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 99.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">MacBook Pro</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-red"><a href="#">New</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img6.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 89.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">iPad Pro</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img7.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 19.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Mobiles</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star"></i>
-                            <i className="lni-star"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-red"><a href="#">New</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="product-item">
-                  <div className="carousel-thumb">
-                    <img className="img-fluid" src="assets/img/product/img8.jpg" alt="" /> 
-                    <div className="overlay">
-                    </div> 
-                    <span className="price">$ 123.00</span>
-                  </div>    
-                  <div className="product-content">
-                    <h3 className="product-title"><a href="ads-details.html">Nexus Phone</a></h3>
-                    <a href="#"><i className="lni-bookmark"></i> New York</a>
-                    <a href="#"><i className="lni-map-marker"></i> California</a>
-                    <div className="icon">
-                      <i className="lni-heart"></i>
-                    </div> 
-                    <div className="card-text">
-                      <div className="meta">
-                        <div className="float-left">
-                          <span className="icon-wrap">
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                            <i className="lni-star-filled"></i>
-                          </span>
-                          <span className="count-review">
-                            <span>1</span> Reviews
-                          </span>
-                        </div>
-                        <div className="float-right">
-                          <span className="btn-product bg-yellow"><a href="#">Sale</a></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <h4><a href="ads-details.html">{producto.nombre}</a></h4>
+              <span>Last Updated: 5 hours ago</span>
+              <ul className="address">
+                <li>
+                  <a href="#"><i className="lni-map-marker"></i>{producto.city}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-alarm-clock"></i> {producto.dateAdded?producto.dateAdded:today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-user"></i> {producto.firstname}</a>
+                </li>
+                <li>
+                  <a href="#"><i className="lni-eye"></i> {producto.views?producto.views:0}</a>
+                </li>
+                
+              </ul>
+              <div className="btn-list">
+                <a className="btn-price" href="#">{producto.precio}</a>
+                <Link to={"/AddDetails/"+key} className="btn btn-common" >
+                  <i className="lni-list"></i>
+			            View Details
+                </Link>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
-      </div>
-    </section>
+
+                )}
+              )
+            }</div>
+            </div>
+          </section>
     {/* <!-- Featured Listings End --> */}
 
     {/* <!-- Services Section Start --> */}
@@ -654,7 +414,7 @@ class Home extends React.Component {
         <h1 className="section-title">Daily Deals</h1>
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <a href="ads-details.html"><div className="special-product">
+            <span href="ads-details.html"><div className="special-product">
               <img src="assets/img/gallery/img-1.jpg" alt="" />
               <div className="product-text">
                 <h3>Special Offer</h3>
@@ -667,10 +427,10 @@ class Home extends React.Component {
                   <a href="#"><i className="icon-arrow-right-circle"></i></a>
                 </div>
               </div>
-            </div></a>
+            </div></span>
           </div>
           <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <a href="ads-details.html"><div className="special-product">
+            <span href="ads-details.html"><div className="special-product">
               <img src="assets/img/gallery/img-2.jpg" alt="" />
               <div className="product-text">
                 <h3>Special Offer</h3>
@@ -683,7 +443,7 @@ class Home extends React.Component {
                   <a href="#"><i className="icon-arrow-right-circle"></i></a>
                 </div>
               </div>
-            </div></a>
+            </div></span>
           </div>
           <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div className="row">
@@ -938,4 +698,4 @@ class Home extends React.Component {
 
 // form = connect(mapStateToProps,{ getPartidos })(form);
 
-export default connect(mapStateToProps,{ getFeaturedProductos })(Home);;
+export default connect(mapStateToProps,{ getFeaturedProductos,getLatestProductos })(Home);;
