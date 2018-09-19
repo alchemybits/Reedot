@@ -2,6 +2,8 @@ import React    from "react";
 import template from "./Products.jsx";
 import { connect } from 'react-redux';
 import { getProductos,getThumbnails,getFeaturedProductos } from '../Actions/Actions';
+import { productos,Users,database } from '../Firebase';
+import * as firebase from 'firebase';
 
 
 
@@ -22,6 +24,8 @@ class Products extends React.Component {
       loading: true,
       stripeLoading: true,
     };
+
+    this.amount = 0;
     // onStripeUpdate must be bound or else clicking on button will produce error.
     this.onStripeUpdate = this.onStripeUpdate.bind(this);
     // binding loadStripe as a best practice, not doing so does not seem to cause error.
@@ -74,15 +78,23 @@ class Products extends React.Component {
                 key: 'pk_test_XZD3wdNUWOcVHzs0euLM3eNm',
                 image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
                 locale: 'auto',
-                token: (token) => {
+                zipCode:false,
+                billingAddress:true,
+                shippingAddress:true,
+                token: (token,billandAdd) => {
                     // this.setState({ loading: true });
                     // use fetch or some other AJAX library here if you dont want to use axios
                     // axios.post('/your-server-side-code', {
-                    console.log("stripeToken:", token.id);
+
+                    var user = firebase.auth().currentUser;
+                    database.child('Payments').child(user.uid).push({token,billandAdd,"amount":this.amount});
+                    console.log("stripeToken:", token);
                     // });
 
                 }
             });
+
+            this.amount = 0;
 
             this.setState({
                 stripeLoading: false,
@@ -108,6 +120,7 @@ class Products extends React.Component {
     }
 
   onStripeUpdate(e) {
+    this.amount = Number(e.precio);
         this.stripeHandler.open({
             name: e.nombre,
             description: e.desc,            
