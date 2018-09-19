@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import {} from '../Firebase.js';
 import _ from 'lodash';
 import swal from 'sweetalert2';
-import $ from 'jquery';
+//import $ from 'jquery';
 
 
 

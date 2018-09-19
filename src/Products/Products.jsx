@@ -152,7 +152,12 @@ function template() {
 			                            </li>
 			                          </ul>
 			                          <div className="btn-list">
-			                            <span className="btn-price" href="#">$ {producto.precio} / Per Hour</span>
+			                            
+                                  {(this.state.loading || this.state.stripeLoading)
+                                      ? <span className="btn-price" id="{key}">loading..</span>
+                                      : <span className="btn-price" id="{key}" onClick={() => this.onStripeUpdate({'precio':producto.precio,'desc':producto.categoria+ ' From:' + producto.city+','+producto.country,'nombre':producto.nombre})}> $ {producto.precio} / Per Hour</span>
+                                  }
+                                  
 			                            <Link to={"/AddDetails/"+producto.key} className="btn btn-common" >
 			                              <i className="lni-list"></i>
 			                              View Details
@@ -210,7 +215,10 @@ function template() {
 			                            </li>
 			                          </ul>
 			                          <div className="btn-list">
-			                            <a className="btn-price" href="#">$ {producto.precio} / Per Hour</a>
+			                            {(this.state.loading || this.state.stripeLoading)
+                                      ? <span className="btn-price" id="{key}">loading..</span>
+                                      : <span className="btn-price" id="{key}" onClick={() => this.onStripeUpdate({'precio':producto.precio,'desc':producto.categoria+ ' From:' + producto.city+','+producto.country,'nombre':producto.nombre})}> $ {producto.precio} / Per Hour</span>
+                                  }
 			                            <Link to={"/AddDetails/"+producto.key} className="btn btn-common" >
 			                              <i className="lni-list"></i>
 			                              View Details

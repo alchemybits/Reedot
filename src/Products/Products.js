@@ -18,11 +18,30 @@ class Products extends React.Component {
     
     this.state = {
       productos: ["0"],
-      collection: []
+      collection: [],
+      loading: true,
+      stripeLoading: true,
     };
-
+    // onStripeUpdate must be bound or else clicking on button will produce error.
+    this.onStripeUpdate = this.onStripeUpdate.bind(this);
+    // binding loadStripe as a best practice, not doing so does not seem to cause error.
+    this.loadStripe = this.loadStripe.bind(this);
     this.searchQuery = this.searchQuery.bind(this);
   }
+
+  loadStripe(onload) {
+        if(! window.StripeCheckout) {
+            const script = document.createElement('script');
+            script.onload = function () {
+                console.info("Stripe script loaded");
+                onload();
+            };
+            script.src = 'https://checkout.stripe.com/checkout.js';
+            document.head.appendChild(script);
+        } else {
+            onload();
+        }
+    }
 
   
   
@@ -50,6 +69,27 @@ class Products extends React.Component {
 
   componentDidMount(){
     this.searchQuery();
+    this.loadStripe(() => {
+            this.stripeHandler = window.StripeCheckout.configure({
+                key: 'pk_test_XZD3wdNUWOcVHzs0euLM3eNm',
+                image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                locale: 'auto',
+                token: (token) => {
+                    // this.setState({ loading: true });
+                    // use fetch or some other AJAX library here if you dont want to use axios
+                    // axios.post('/your-server-side-code', {
+                    console.log("stripeToken:", token.id);
+                    // });
+
+                }
+            });
+
+            this.setState({
+                stripeLoading: false,
+                // loading needs to be explicitly set false so component will render in 'loaded' state.
+                loading: false,
+            });
+        });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,6 +98,23 @@ class Products extends React.Component {
 
   componentWillMount() {
     this.props.getProductos();
+
+  }
+
+  componentWillUnmount() {
+        if(this.stripeHandler) {
+            this.stripeHandler.close();
+        }
+    }
+
+  onStripeUpdate(e) {
+        this.stripeHandler.open({
+            name: e.nombre,
+            description: e.desc,            
+            allowRememberMe: true,
+            amount: (Number(e.precio) * 100)
+        });
+        
   }
 
   searchQuery(e){
