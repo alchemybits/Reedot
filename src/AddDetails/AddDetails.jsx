@@ -10,6 +10,7 @@ function template() {
       <div class="section-padding">
       <div class="container">
       <h1>AD/PRODUCT DETAIL</h1>
+      
         {/* <!-- Product Info Start --> */}
         <div class="product-info row">
           <div class="col-lg-7 col-md-12 col-xs-12">
@@ -54,7 +55,13 @@ function template() {
                 </li>                
                 
               </ul>
+              {(this.state.loading || this.state.stripeLoading)
+                ? <span className="btn btn-common btn-price" id="{key}">loading..</span>
+                : <span className="btn btn-common btn-price" id="{key}" onClick={() => this.onStripeUpdate({'precio':this.props.productoDetail.precio,'desc':this.props.productoDetail.categoria+ ' From:' + this.props.productoDetail.city+','+this.props.productoDetail.country,'nombre':this.props.productoDetail.nombre})}> $ {this.props.productoDetail.precio} / Per Hour</span>
+              }
+              <br/>
               <div class="ads-btn mb-4">
+              
                 <a href="#" class="btn btn-common btn-reply"><i class="lni-user"></i> {this.props.productoDetail.nombre}</a>
                 <a href="#" class="btn btn-common"><i class="lni-phone-handset"></i> {this.props.productoDetail.phone}</a>
               </div>

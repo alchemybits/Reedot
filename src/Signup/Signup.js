@@ -102,6 +102,7 @@ constructor(props) {
 
     e.preventDefault();
     const toast = this.toast;
+    const email = this.state.email;
     firebase.auth().createUserWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password).then((Luser) => {
 
       
@@ -115,7 +116,8 @@ constructor(props) {
         }).then(function() {          
            
             database.child("users").child(user.uid).update({
-              user: user.displayName
+              user: user.displayName,
+              email: email
   
             })
 

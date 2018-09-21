@@ -148,7 +148,7 @@ class PostRequest extends React.Component {
 
     function formatBytes(a,b){if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
 
-   
+   var user = firebase.auth().currentUser;
 
     task.on('state_changed',
       function progress(snapshot) {
@@ -175,11 +175,12 @@ class PostRequest extends React.Component {
           state : vstate,
           city: vcity,
           Negotiable: negotiable,
-          dateAdded: datetime
+          dateAdded: datetime,
+          user:user.uid
           
         });
 
-        var user = firebase.auth().currentUser;
+        
 
         Users.child(user.uid).update({
           name: vfirstname

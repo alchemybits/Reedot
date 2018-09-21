@@ -43,6 +43,56 @@ const THUMB_MAX_WIDTH = 200;
 // Thumbnail prefix added to file names.
 const THUMB_PREFIX = 'thumb_';
 
+// const stripe = require('stripe')(functions.config().stripe.testkey)
+
+// exports.stripecharge = functions.database.ref('Payments/{userId}/{paymentId}').onWrite( (event,context) => {
+//   const payment = event.after.val();
+//   const userId = context.params.userId;
+//   const paymentId = context.params.paymentId;
+
+//   if(!payment || payment.charge) return;
+
+//   const amount = payment.amount;
+//   const idempotency_key = paymentId;
+//   const source = payment.token.id;
+//   const currency = 'usd';
+//   const charge = {amount,currency,source};
+
+//   return admin.database()
+//   .ref(`/Payments/${userId}/${paymentId}/charge`)
+//   .set(stripe.charges.create(charge,{idempotency_key}));
+
+
+
+
+
+//   // return admin.database()
+//   //               .ref(`/users/${userId}`)
+//   //               .once('value')
+//   //               .then( snapshot => {
+//   //                 return snapshot.val();
+//   //               })
+//   //                 .then(customer => {
+//   //                     const amount = payment.amount;
+//   //                     const idempotency_key = paymentId;
+//   //                     const source = payment.token.id;
+//   //                     const currency = 'usd';
+//   //                     const charge = {amount,currency,source};
+
+//   //                     return stripe.charges.create(charge,{idempotency_key});
+//   //                 })
+
+//   //                 .then(charge => {
+//   //                   admin.database()
+//   //                     .ref(`/Payments/${userId}/${paymentId}/charge`)
+//   //                     .set(charge);
+
+//   //                     return true;
+//   //                 })
+
+
+// })
+
 /**
  * When an image is uploaded in the Storage bucket We generate a thumbnail automatically using
  * ImageMagick.
